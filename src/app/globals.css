@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-emerald-darkest: #07110C;
+  --color-emerald-950: #0B1912;
+  --color-emerald-900: #12261C;
+  --color-emerald-850: #172F23;
+  --color-emerald-800: #1E3B2C;
+  --color-emerald-700: #294F3B;
+  --color-emerald-600: #396D53;
+  
+  --color-gold-300: #F7E7B4;
+  --color-gold-400: #E7C975;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B38F23;
+  --color-gold-700: #8E6F16;
+
+  --color-champagne: #FBF8F1;
+  --color-sand: #F1ECE1;
+  --color-warm-gray: #E5DFC5;
+
+  --font-serif: var(--font-cinzel), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #08120D;
+  --foreground: #F4EFEA;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: #D4AF37;
+  selection-color: #0B1912;
+}
+
+/* Custom Gold Metallic Text Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF0CA 0%, #E5C365 40%, #D4AF37 60%, #9F7618 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-subtle {
+  background: linear-gradient(135deg, #FBF8F1 20%, #E7C975 60%, #C89F30 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Metallic Gold Border */
+.gold-border-gradient {
+  border-image: linear-gradient(135deg, #E5C365, rgba(212, 175, 55, 0.2), #9F7618) 1;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(14, 28, 20, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 36, 26, 0.85);
+  border-color: rgba(229, 195, 101, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+/* Infinite Marquee Keyframes */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08120D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3B2C;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
