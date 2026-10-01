@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, MessageSquare, Clock, Send, ShieldCheck, Sparkles } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, Sparkles } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { COMPANY_INFO } from "@/data/companyData";
 import confetti from "canvas-confetti";
 
@@ -125,7 +126,7 @@ export default function ContactSection() {
                     onClick={handleWhatsApp}
                     className="w-full py-3 rounded-xl bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-600/50 text-emerald-200 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
                   >
-                    <MessageSquare className="w-4 h-4 text-emerald-300" />
+                    <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                     <span>Chat on WhatsApp Directly</span>
                   </button>
                 </div>

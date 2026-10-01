@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import confetti from "canvas-confetti";
-import { X, CheckCircle, Send, MessageSquare, Phone, Mail, Sparkles, ShieldCheck } from "lucide-react";
+import { X, CheckCircle, Send, Phone, Mail, Sparkles, ShieldCheck } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { COMPANY_INFO } from "@/data/companyData";
 
 interface ConsultationModalProps {
@@ -108,7 +109,7 @@ export default function ConsultationModal({
                   onClick={handleWhatsAppDirect}
                   className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-700 hover:bg-emerald-600 text-white flex items-center gap-2 cursor-pointer shadow-lg"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>Send via WhatsApp for Instant Response</span>
                 </button>
                 <button
@@ -240,7 +241,7 @@ export default function ConsultationModal({
                   onClick={handleWhatsAppDirect}
                   className="w-full sm:w-auto px-5 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
                   <span>Send via WhatsApp</span>
                 </button>
               </div>

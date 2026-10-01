@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import ArhaLogo from "./ArhaLogo";
-import { Phone, MessageSquare, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
+import { Phone, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 interface NavbarProps {
@@ -71,10 +72,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#14291F] border border-[#2E5E43] text-emerald-300 hover:text-white hover:border-[#D4AF37]/50 text-xs font-medium transition-all whitespace-nowrap shrink-0"
                 title="Chat on WhatsApp"
               >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
+                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
                 <span className="hidden xl:inline">WhatsApp</span>
               </a>
 
@@ -150,7 +148,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-950/80 border border-emerald-600/40 text-emerald-300 text-xs font-medium"
                 >
-                  <MessageSquare className="w-3.5 h-3.5" />
+                  <WhatsAppIcon className="w-3.5 h-3.5" />
                   <span>WhatsApp</span>
                 </a>
               </div>
