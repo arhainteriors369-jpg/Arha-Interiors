@@ -43,7 +43,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
       {/* Background architectural grid lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#14291F0A_1px,transparent_1px),linear-gradient(to_bottom,#14291F0A_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C365] mb-3">
@@ -60,7 +60,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
         </div>
 
         {/* The 4 Core Pillars Strip (from PDF Cover & Thank You Page) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-12 sm:mb-16">
           {COMPANY_INFO.pillars.map((pillar, idx) => {
             const IconComponent = pillarIcons[idx % pillarIcons.length];
             return (

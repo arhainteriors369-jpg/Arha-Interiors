@@ -32,15 +32,15 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
       <div className="absolute top-1/3 -left-48 w-96 h-96 bg-[#1E3B2C]/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 -right-48 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C365] mb-3">
               <Building2 className="w-3.5 h-3.5" />
               <span>Executed Project Portfolio</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#FBF8F1] leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#FBF8F1] leading-tight">
               Selected Turnkey Workspaces
             </h2>
           </div>
@@ -50,7 +50,7 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 border-b border-[#1E3B2C]/60 pb-4">
+        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-[#1E3B2C]/60 pb-4">
           {categories.map((cat) => (
             <button
               key={cat.value}
@@ -66,8 +66,8 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects Grid - Full Width Expansive 4-Column on XL Displays */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
@@ -97,13 +97,13 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
                 </div>
 
                 {/* Location Bar */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-[#C5B899]">
-                  <span className="flex items-center gap-1 font-mono">
-                    <MapPin className="w-3 h-3 text-[#E5C365]" />
-                    {project.location}
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-[10px] sm:text-[11px] text-[#C5B899] gap-2">
+                  <span className="flex items-center gap-1 font-mono truncate">
+                    <MapPin className="w-3 h-3 text-[#E5C365] shrink-0" />
+                    <span className="truncate">{project.location}</span>
                   </span>
                   {project.area && (
-                    <span className="bg-[#14291F]/90 px-2 py-0.5 rounded border border-[#2B4E3C] font-mono text-[10px] text-emerald-300">
+                    <span className="bg-[#14291F]/90 px-2 py-0.5 rounded border border-[#2B4E3C] font-mono text-[9px] sm:text-[10px] text-emerald-300 shrink-0">
                       {project.area}
                     </span>
                   )}

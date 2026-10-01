@@ -7,7 +7,7 @@ import { ShieldAlert, CheckCircle, Award, FileText, Users, Sparkles, Building, C
 export default function QualitySafetySection() {
   return (
     <section className="relative py-24 bg-[#08120D] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C365] mb-3">

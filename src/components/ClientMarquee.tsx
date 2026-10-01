@@ -27,7 +27,7 @@ export default function ClientMarquee() {
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-[#1E3B2C]/30 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 mb-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-[#E5C365] mb-1">
@@ -71,7 +71,7 @@ export default function ClientMarquee() {
       </div>
 
       {/* Verified Government Credentials Badge Strip */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-6 border-t border-[#1E3B2C]/60">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 mt-6 pt-6 border-t border-[#1E3B2C]/60">
         <div className="flex flex-wrap items-center justify-center md:justify-between gap-4 text-xs">
           <div className="flex items-center gap-2 text-[#E5DFC5]/80">
             <ShieldCheck className="w-4 h-4 text-[#E5C365]" />

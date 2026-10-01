@@ -11,7 +11,7 @@ export default function ProcessMethodology() {
 
   return (
     <section id="methodology" className="relative py-24 bg-[#07110C] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C365] mb-3">
@@ -26,7 +26,7 @@ export default function ProcessMethodology() {
         </div>
 
         {/* 5-Step Interactive Roadmap Navigation */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
           {METHODOLOGY_STEPS.map((step, idx) => {
             const Icon = stepIcons[idx];
             const isCurrent = activeStep === idx;
@@ -35,7 +35,9 @@ export default function ProcessMethodology() {
               <button
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
-                className={`p-4 rounded-2xl text-left transition-all duration-300 relative cursor-pointer flex flex-col justify-between ${
+                className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 relative cursor-pointer flex flex-col justify-between ${
+                  idx === 4 ? "col-span-2 sm:col-span-1" : ""
+                } ${
                   isCurrent
                     ? "bg-[#142C20] border-2 border-[#D4AF37] shadow-[0_10px_25px_rgba(212,175,55,0.2)] -translate-y-1"
                     : "bg-[#0E1E16] border border-[#1E3B2C] hover:border-[#D4AF37]/40 hover:bg-[#12261C]"
