@@ -22,12 +22,12 @@ export default function QualitySafetySection() {
           </p>
         </div>
 
-        {/* 6 Quality & Safety Pillars from PDF Page 13 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* 6 Quality & Safety Pillars from PDF Page 13 - Horizontal Scroll on Mobile */}
+        <div className="flex overflow-x-auto snap-x md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-16 sm:mb-20 no-scrollbar pb-3">
           {QUALITY_SAFETY_POINTS.map((item) => (
             <div
               key={item.code}
-              className="glass-panel p-6 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
+              className="w-[82vw] sm:w-[320px] md:w-auto shrink-0 snap-start glass-panel p-5 sm:p-6 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-[11px] font-bold tracking-widest px-2.5 py-1 rounded bg-[#14291F] border border-[#2B4E3C] text-[#E5C365]">

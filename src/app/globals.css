@@ -113,3 +113,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
 }
+
+/* Hide Scrollbar for Horizontal Sliders */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

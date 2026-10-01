@@ -37,18 +37,17 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-[#07110C]/95 backdrop-blur-md border-b border-[#D4AF37]/20 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-            : "bg-gradient-to-b from-[#07110C]/95 via-[#07110C]/70 to-transparent py-4 sm:py-5"
+            : "bg-gradient-to-b from-[#07110C]/95 via-[#07110C]/70 to-transparent py-3 sm:py-5"
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
-          <div className="flex items-center justify-between gap-2 sm:gap-4">
-            {/* Brand Logo */}
+        <div className="w-full px-3.5 sm:px-6 lg:px-10 xl:px-14">
+          <div className="flex items-center justify-between gap-2">
+            {/* Single Clean Brand Logo - Never Duplicated */}
             <a href="#" className="shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98]">
-              <ArhaLogo size="md" className="hidden sm:inline-flex" />
-              <ArhaLogo size="sm" variant="monogram" className="inline-flex sm:hidden" />
+              <ArhaLogo size="sm" />
             </a>
 
-            {/* Desktop Navigation Links (Responsive spacing) */}
+            {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-6 shrink-0">
               {navLinks.map((link) => (
                 <a
@@ -63,8 +62,8 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             </nav>
 
             {/* Right Action Controls */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-              {/* WhatsApp Quick Action (Full text on xl, icon-only on md-lg) */}
+            <div className="flex items-center gap-2 shrink-0">
+              {/* WhatsApp Quick Action (Desktop) */}
               <a
                 href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Hi%20ARHA%20Interiors%2C%20I%20am%20interested%20in%20a%20turnkey%20interior%20fit-out%20consultation.`}
                 target="_blank"
@@ -79,7 +78,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 <span className="hidden xl:inline">WhatsApp</span>
               </a>
 
-              {/* Direct Call Link (Full number on 2xl, compact or icon-only below) */}
+              {/* Direct Call Link (Desktop) */}
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
                 className="hidden md:inline-flex items-center gap-1.5 text-xs text-[#E5DFC5] hover:text-[#E5C365] transition-colors px-2.5 py-1.5 rounded-full bg-[#0F2016] border border-[#1E3B2C] whitespace-nowrap shrink-0"
@@ -90,22 +89,30 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 <span className="font-mono tracking-wider inline 2xl:hidden text-[11px]">Call</span>
               </a>
 
-              {/* Primary Proposal Request CTA Button */}
+              {/* Desktop Proposal Request Button */}
               <button
                 onClick={onOpenConsultation}
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 xl:px-5 py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] hover:from-[#FFFFFF] hover:to-[#E5C365] shadow-[0_0_15px_rgba(212,175,55,0.25)] transition-all hover:scale-105 active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 xl:px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] hover:from-[#FFFFFF] hover:to-[#E5C365] shadow-[0_0_15px_rgba(212,175,55,0.25)] transition-all hover:scale-105 active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
               >
                 <span>Request Proposal</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
 
+              {/* Mobile Compact Proposal Button - Never Overflows */}
+              <button
+                onClick={onOpenConsultation}
+                className="sm:hidden px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] to-[#E5C365] shadow-md cursor-pointer whitespace-nowrap shrink-0"
+              >
+                Proposal
+              </button>
+
               {/* Mobile / Tablet Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-[#E5DFC5] hover:text-[#E5C365] hover:bg-[#14291F] border border-transparent hover:border-[#2B4E3C] transition-colors shrink-0"
+                className="lg:hidden p-1.5 sm:p-2 rounded-lg text-[#E5DFC5] hover:text-[#E5C365] hover:bg-[#14291F] border border-transparent hover:border-[#2B4E3C] transition-colors shrink-0"
                 aria-label="Toggle Navigation"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>

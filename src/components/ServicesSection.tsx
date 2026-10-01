@@ -59,14 +59,14 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
           </p>
         </div>
 
-        {/* The 4 Core Pillars Strip (from PDF Cover & Thank You Page) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-12 sm:mb-16">
+        {/* The 4 Core Pillars Strip - Horizontal Swipe on Mobile */}
+        <div className="flex overflow-x-auto snap-x sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-12 sm:mb-16 no-scrollbar pb-2">
           {COMPANY_INFO.pillars.map((pillar, idx) => {
             const IconComponent = pillarIcons[idx % pillarIcons.length];
             return (
               <div
                 key={pillar.title}
-                className="glass-panel p-5 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
+                className="w-[75vw] sm:w-auto shrink-0 snap-start glass-panel p-5 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#14291F] border border-[#2B4E3C] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:border-[#D4AF37] transition-all">
                   <IconComponent className="w-5 h-5 text-[#E5C365]" />

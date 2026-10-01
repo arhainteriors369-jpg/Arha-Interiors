@@ -10,14 +10,14 @@ export default function ProcessMethodology() {
   const stepIcons = [Search, PenTool, Calendar, Hammer, KeyRound];
 
   return (
-    <section id="methodology" className="relative py-24 bg-[#07110C] overflow-hidden">
+    <section id="methodology" className="relative py-20 sm:py-24 bg-[#07110C] overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C365] mb-3">
             <span>Our Project Approach</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#FBF8F1] leading-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#FBF8F1] leading-tight mb-3">
             The 5-Step Turnkey Methodology
           </h2>
           <p className="text-xs sm:text-sm text-[#A3997E] max-w-lg mx-auto">
@@ -25,8 +25,8 @@ export default function ProcessMethodology() {
           </p>
         </div>
 
-        {/* 5-Step Interactive Roadmap Navigation */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
+        {/* 5-Step Interactive Roadmap Navigation - Perfectly Aligned 5-Col Grid on Desktop, Smooth Swipe on Mobile */}
+        <div className="flex overflow-x-auto snap-x md:grid md:grid-cols-5 gap-3 sm:gap-3.5 mb-8 sm:mb-10 no-scrollbar pb-2 items-stretch">
           {METHODOLOGY_STEPS.map((step, idx) => {
             const Icon = stepIcons[idx];
             const isCurrent = activeStep === idx;
@@ -35,17 +35,15 @@ export default function ProcessMethodology() {
               <button
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
-                className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 relative cursor-pointer flex flex-col justify-between ${
-                  idx === 4 ? "col-span-2 sm:col-span-1" : ""
-                } ${
+                className={`w-[68vw] sm:w-[45vw] md:w-auto shrink-0 snap-start p-4 rounded-2xl text-left transition-all duration-200 relative cursor-pointer flex flex-col justify-between border ${
                   isCurrent
-                    ? "bg-[#142C20] border-2 border-[#D4AF37] shadow-[0_10px_25px_rgba(212,175,55,0.2)] -translate-y-1"
-                    : "bg-[#0E1E16] border border-[#1E3B2C] hover:border-[#D4AF37]/40 hover:bg-[#12261C]"
+                    ? "bg-[#142C20] border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.25)] ring-1 ring-[#D4AF37]"
+                    : "bg-[#0E1E16] border-[#1E3B2C] hover:border-[#D4AF37]/50 hover:bg-[#12261C]"
                 }`}
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3">
                   <span
-                    className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
+                    className={`font-mono text-xs font-bold px-2 py-0.5 rounded transition-colors ${
                       isCurrent
                         ? "bg-[#D4AF37] text-[#07110C]"
                         : "bg-[#1A3325] text-[#A3997E]"
@@ -54,7 +52,7 @@ export default function ProcessMethodology() {
                     {step.number}
                   </span>
                   <Icon
-                    className={`w-5 h-5 ${
+                    className={`w-4 h-4 transition-colors ${
                       isCurrent ? "text-[#E5C365]" : "text-[#7A9E8A]"
                     }`}
                   />
@@ -62,7 +60,7 @@ export default function ProcessMethodology() {
 
                 <div>
                   <h3
-                    className={`font-serif text-sm font-bold tracking-wide uppercase ${
+                    className={`font-serif text-sm font-bold tracking-wide uppercase transition-colors ${
                       isCurrent ? "text-[#FFF2D6]" : "text-[#E5DFC5]"
                     }`}
                   >
@@ -88,7 +86,7 @@ export default function ProcessMethodology() {
                 <span>{METHODOLOGY_STEPS[activeStep].tagline}</span>
               </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#FBF8F1] mb-4">
+              <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#FBF8F1] mb-4">
                 {METHODOLOGY_STEPS[activeStep].title} — {METHODOLOGY_STEPS[activeStep].tagline}
               </h3>
 
