@@ -351,30 +351,6 @@ export const PROJECTS_GALLERY: ProjectItem[] = [
     scope: ["Atrium Architecture", "Industrial Ceiling Finish", "Lighting Automation", "Safety & Fire Protection"]
   },
   {
-    id: "proj-8",
-    title: "Grand Reception & Hospitality Lobby",
-    client: "ARHA Signature Project",
-    category: "executive",
-    location: "Bengaluru, Karnataka",
-    year: "Flagship Showcase",
-    area: "Luxury Suite",
-    image: "/images/projects/project_img_1.jpg",
-    description: "Ultra-luxury double-height corporate lounge featuring fluted marble columns, champagne gold metal inlays, lush indoor tropical plants, and bespoke velvet seating.",
-    scope: ["Full Turnkey Interior", "Marble & Brass Detailing", "Custom Illuminations", "Luxury Furniture"]
-  },
-  {
-    id: "proj-9",
-    title: "Executive Penthouse Lounge",
-    client: "ARHA Signature Suite",
-    category: "breakout",
-    location: "Bengaluru, Karnataka",
-    year: "Executive Hospitality",
-    area: "Premium Zone",
-    image: "/images/projects/project_img_19.jpg",
-    description: "Warm, sophisticated VIP lounge with backlit vertical timber louvers, plush low-profile sofas, and intimate warm lighting designed for high-level conversations.",
-    scope: ["VIP Hospitality", "Backlit Joinery", "Fine Timber Millwork", "Curated Soft Furnishings"]
-  },
-  {
     id: "proj-10",
     title: "Walmart Agile Café & Workspace",
     client: "Walmart",
