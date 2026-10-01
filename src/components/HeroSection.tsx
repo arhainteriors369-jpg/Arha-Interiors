@@ -1,34 +1,19 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { ArrowRight, Play, Pause, Building2, Sparkles, ShieldCheck } from "lucide-react";
+import React from "react";
+import { ArrowRight, Building2, Sparkles } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenConsultation: () => void;
 }
 
 export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const toggleVideo = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
   return (
     <>
       <section className="relative min-h-[82vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16">
         {/* High-Visibility Architectural Video Background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           <video
-            ref={videoRef}
             autoPlay
             loop
             muted
@@ -43,18 +28,6 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#07110C]/80 via-transparent to-[#07110C]/90" />
         </div>
-
-        {/* Video Control - Hidden on mobile to keep screen uncluttered */}
-        <button
-          onClick={toggleVideo}
-          className="absolute top-28 right-8 z-20 hidden md:flex items-center gap-1.5 bg-[#0B1912]/80 hover:bg-[#14291F] backdrop-blur-md px-3 py-1.5 rounded-full border border-[#D4AF37]/30 text-xs text-[#E5DFC5] transition-all cursor-pointer shadow-lg"
-          title={isPlaying ? "Pause video" : "Play video"}
-        >
-          {isPlaying ? <Pause className="w-3.5 h-3.5 text-[#E5C365]" /> : <Play className="w-3.5 h-3.5 text-[#E5C365]" />}
-          <span className="text-[10px] tracking-wider uppercase font-mono">
-            {isPlaying ? "Ambient Video" : "Paused"}
-          </span>
-        </button>
 
         {/* Hero Content - Perfectly Proportioned on Mobile & Desktop */}
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 text-center flex flex-col items-center">
