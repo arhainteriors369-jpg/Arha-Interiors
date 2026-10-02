@@ -13,76 +13,25 @@ export default function ArhaLogo({
   size = "md",
   showSubtitle = false,
 }: ArhaLogoProps) {
-  const iconSizes = {
-    sm: "w-8 h-8",
-    md: "w-10 h-10",
-    lg: "w-12 h-12",
-    xl: "w-16 h-16",
+  // Height sizing for the authentic botanical branch + AR monogram
+  const heightClasses = {
+    sm: "h-7 sm:h-8",
+    md: "h-9 sm:h-10",
+    lg: "h-11 sm:h-12",
+    xl: "h-14 sm:h-16",
   };
 
+  const currentHeight = heightClasses[size] || heightClasses.md;
+
   return (
-    <div className={`inline-flex items-center gap-2.5 sm:gap-3 select-none ${className}`}>
-      {/* Golden Monogram "AR" with Leaf */}
-      <div
-        className={`relative ${iconSizes[size]} flex items-center justify-center shrink-0 rounded-lg p-1 bg-gradient-to-br from-[#1E3B2C] via-[#0E1E16] to-[#08120D] border border-[#D4AF37]/50 shadow-inner group`}
-      >
-        <svg
-          viewBox="0 0 100 100"
-          className="w-full h-full fill-none drop-shadow-[0_2px_4px_rgba(212,175,55,0.4)]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient id="arGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFF2D6" />
-              <stop offset="35%" stopColor="#E5C365" />
-              <stop offset="70%" stopColor="#D4AF37" />
-              <stop offset="100%" stopColor="#9E761C" />
-            </linearGradient>
-          </defs>
-
-          {/* Golden Elegant "AR" Letterform Calligraphy */}
-          <path
-            d="M 32 82 L 48 24 Q 50 18 55 24 L 70 82"
-            stroke="url(#arGold)"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M 38 62 Q 52 56 64 62"
-            stroke="url(#arGold)"
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-          <path
-            d="M 48 24 Q 76 22 76 46 Q 76 60 56 60 Q 64 68 76 82"
-            stroke="url(#arGold)"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M 22 82 Q 30 76 34 82"
-            stroke="url(#arGold)"
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-
-          {/* Delicate botanical leaf sprouting at top */}
-          <path
-            d="M 52 18 C 50 10 56 6 62 4 C 64 10 60 16 52 18 Z"
-            fill="url(#arGold)"
-          />
-          <path
-            d="M 62 4 C 66 8 68 14 62 18"
-            stroke="#FFF2D6"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-          />
-        </svg>
-
-        {/* Ambient subtle glow ring */}
-        <div className="absolute inset-0 rounded-lg ring-1 ring-[#D4AF37]/30 pointer-events-none" />
+    <div className={`inline-flex items-center gap-2.5 sm:gap-3 select-none group cursor-pointer ${className}`}>
+      {/* Authentic Golden Monogram with Natural Botanical Leaf Branch */}
+      <div className={`relative ${currentHeight} flex items-center justify-center shrink-0`}>
+        <img
+          src="/images/arha_logo_monogram.png"
+          alt="ARHA Interiors Monogram"
+          className="h-full w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)] group-hover:scale-105 group-hover:drop-shadow-[0_4px_16px_rgba(212,175,55,0.6)] transition-all duration-300"
+        />
       </div>
 
       {/* Typography - ONLY Company Name */}
@@ -97,7 +46,7 @@ export default function ArhaLogo({
             </span>
           </div>
           {showSubtitle && (
-            <span className="text-[9px] tracking-[0.28em] text-[#C5B899] font-sans uppercase font-medium mt-0.5 whitespace-nowrap">
+            <span className="text-[10px] tracking-[0.24em] text-[#C5B899] font-serif italic mt-0.5 whitespace-nowrap">
               Spaces that grow with you
             </span>
           )}

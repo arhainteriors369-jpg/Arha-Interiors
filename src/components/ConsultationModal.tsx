@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import confetti from "canvas-confetti";
 import { X, CheckCircle, Send, Phone, Mail, Sparkles, ShieldCheck } from "lucide-react";
-import WhatsAppIcon from "./WhatsAppIcon";
 import { COMPANY_INFO } from "@/data/companyData";
 
 interface ConsultationModalProps {
@@ -44,19 +43,6 @@ export default function ConsultationModal({
     } catch {
       // ignore
     }
-  };
-
-  const handleWhatsAppDirect = () => {
-    const text = encodeURIComponent(
-      `Hello ARHA Interiors, I would like to request a turnkey proposal.\n\n` +
-      `*Name:* ${name || "Corporate Client"}\n` +
-      `*Company:* ${company || "Not specified"}\n` +
-      `*Service:* ${service}\n` +
-      `*Area:* ${area} sq. ft.\n` +
-      `*Contact:* ${phone || email}\n` +
-      `*Project Notes:* ${notes || "Looking for fast-track turnkey execution."}`
-    );
-    window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, "_blank");
   };
 
   return (
@@ -105,16 +91,16 @@ export default function ConsultationModal({
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button
-                  onClick={handleWhatsAppDirect}
-                  className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-700 hover:bg-emerald-600 text-white flex items-center gap-2 cursor-pointer shadow-lg"
+                <a
+                  href={`tel:${COMPANY_INFO.phoneRaw}`}
+                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#14291F] text-[#FFF2D6] hover:bg-[#1E3B2C] border border-[#D4AF37]/50 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                 >
-                  <WhatsAppIcon className="w-4 h-4" />
-                  <span>Send via WhatsApp for Instant Response</span>
-                </button>
+                  <Phone className="w-4 h-4 text-[#E5C365]" />
+                  <span>Call Directly: {COMPANY_INFO.phone}</span>
+                </a>
                 <button
                   onClick={onClose}
-                  className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#14291F] text-[#E5DFC5] hover:bg-[#1E3B2C] border border-[#2B4E3C] cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#08120D] text-[#A3997E] hover:text-white border border-[#2B4E3C] cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -227,22 +213,13 @@ export default function ConsultationModal({
                 />
               </div>
 
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full sm:flex-1 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 rounded-full text-xs font-bold uppercase tracking-widest text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] hover:scale-[1.01] active:scale-[0.99] transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
                   <span>Submit Proposal Request</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={handleWhatsAppDirect}
-                  className="w-full sm:w-auto px-5 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 transition-colors flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
-                  <span>Send via WhatsApp</span>
                 </button>
               </div>
 

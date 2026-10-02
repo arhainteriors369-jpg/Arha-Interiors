@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import ArhaLogo from "./ArhaLogo";
-import WhatsAppIcon from "./WhatsAppIcon";
-import { Phone, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 interface NavbarProps {
@@ -64,27 +63,14 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
 
             {/* Right Action Controls */}
             <div className="flex items-center gap-2 shrink-0">
-              {/* WhatsApp Quick Action (Desktop) */}
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Hi%20ARHA%20Interiors%2C%20I%20am%20interested%20in%20a%20turnkey%20interior%20fit-out%20consultation.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#14291F] border border-[#2E5E43] text-emerald-300 hover:text-white hover:border-[#D4AF37]/50 text-xs font-medium transition-all whitespace-nowrap shrink-0"
-                title="Chat on WhatsApp"
-              >
-                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="hidden xl:inline">WhatsApp</span>
-              </a>
-
               {/* Direct Call Link (Desktop) */}
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="hidden md:inline-flex items-center gap-1.5 text-xs text-[#E5DFC5] hover:text-[#E5C365] transition-colors px-2.5 py-1.5 rounded-full bg-[#0F2016] border border-[#1E3B2C] whitespace-nowrap shrink-0"
+                className="hidden md:inline-flex items-center gap-2 text-xs text-[#E5DFC5] hover:text-[#E5C365] transition-colors px-3 py-1.5 rounded-full bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37]/50 whitespace-nowrap shrink-0 group"
                 title={`Call ${COMPANY_INFO.phone}`}
               >
-                <Phone className="w-3.5 h-3.5 text-[#E5C365]" />
-                <span className="font-mono tracking-wider hidden 2xl:inline">{COMPANY_INFO.phone}</span>
-                <span className="font-mono tracking-wider inline 2xl:hidden text-[11px]">Call</span>
+                <Phone className="w-3.5 h-3.5 text-[#E5C365] group-hover:scale-110 transition-transform" />
+                <span className="font-mono tracking-wider font-semibold text-[#FFF2D6]">{COMPANY_INFO.phone}</span>
               </a>
 
               {/* Desktop Proposal Request Button */}
@@ -143,13 +129,11 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 </a>
 
                 <a
-                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Hi%20ARHA%20Interiors%2C%20I%20am%20interested%20in%20a%20turnkey%20interior%20fit-out%20consultation.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-950/80 border border-emerald-600/40 text-emerald-300 text-xs font-medium"
+                  href={`mailto:${COMPANY_INFO.email}`}
+                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#14291F] border border-[#2B4E3C] text-xs font-mono text-[#E5DFC5] hover:text-[#E5C365]"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5" />
-                  <span>WhatsApp</span>
+                  <Mail className="w-3.5 h-3.5 text-[#E5C365]" />
+                  <span>Email Us</span>
                 </a>
               </div>
 

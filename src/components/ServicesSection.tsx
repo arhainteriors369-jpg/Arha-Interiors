@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { SERVICES_DATA, COMPANY_INFO } from "@/data/companyData";
+import { SERVICES_DATA, COMPANY_INFO, CORE_SERVICE_VERTICALS } from "@/data/companyData";
 import { 
   Compass, 
   HardHat, 
@@ -18,7 +18,11 @@ import {
   Award,
   ChevronDown,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Home,
+  Building2,
+  Cog,
+  Sofa
 } from "lucide-react";
 
 interface ServicesSectionProps {
@@ -62,27 +66,77 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
           </p>
         </div>
 
-        {/* The 4 Core Pillars Strip - Horizontal Swipe on Mobile */}
-        <div className="flex overflow-x-auto snap-x sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-12 sm:mb-16 no-scrollbar pb-2">
-          {COMPANY_INFO.pillars.map((pillar, idx) => {
-            const IconComponent = pillarIcons[idx % pillarIcons.length];
-            return (
-              <div
-                key={pillar.title}
-                className="w-[75vw] sm:w-auto shrink-0 snap-start glass-panel p-5 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#14291F] border border-[#2B4E3C] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:border-[#D4AF37] transition-all">
-                  <IconComponent className="w-5 h-5 text-[#E5C365]" />
+        {/* The 4 Signature Sectors from Company Profile (Residential, Commercial, Turnkey, Furniture) */}
+        <div className="mb-16 sm:mb-20">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 sm:mb-8 border-b border-[#D4AF37]/20 pb-4">
+            <div>
+              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#E5C365] font-semibold block mb-1">
+                Core Verticals • Turnkey Disciplines
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#FBF8F1]">
+                Specialized Project Divisions
+              </h3>
+            </div>
+            <span className="text-xs text-[#A3997E] font-light max-w-sm">
+              Click any vertical to request a customized project consultation.
+            </span>
+          </div>
+
+          <div className="flex overflow-x-auto snap-x sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 no-scrollbar pb-3">
+            {CORE_SERVICE_VERTICALS.map((vertical, idx) => {
+              const verticalIcons = [Home, Building2, Cog, Sofa];
+              const IconComp = verticalIcons[idx];
+
+              return (
+                <div
+                  key={vertical.id}
+                  onClick={() => onSelectService(vertical.title)}
+                  className="w-[82vw] sm:w-auto shrink-0 snap-start glass-panel p-6 rounded-2xl border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] hover:shadow-[0_12px_35px_rgba(212,175,55,0.22)] transition-all duration-300 group cursor-pointer bg-gradient-to-b from-[#10241A] to-[#08140E] flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Golden Circular Icon Badge Matching Brochure Exactly */}
+                    <div className="w-14 h-14 rounded-full border-2 border-[#D4AF37] ring-4 ring-[#D4AF37]/20 flex items-center justify-center bg-[#07130D] text-[#E5C365] mb-5 group-hover:scale-110 group-hover:border-[#FFF2D6] group-hover:ring-[#D4AF37]/45 transition-all shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+                      <IconComp className="w-7 h-7 text-[#E5C365] stroke-[1.75]" />
+                    </div>
+
+                    {/* Exact Brochure Uppercase Title */}
+                    <h4 className="font-serif font-bold text-base sm:text-lg text-[#FBF8F1] tracking-wider uppercase mb-1.5 group-hover:text-[#E5C365] transition-colors leading-snug">
+                      {vertical.title}
+                    </h4>
+
+                    {/* Subtitle / Focus */}
+                    <p className="text-[11px] font-mono text-[#D4AF37] uppercase tracking-wider mb-2.5 font-medium">
+                      {vertical.subtitle}
+                    </p>
+
+                    {/* Description */}
+                    <p className="text-xs text-[#A3997E] leading-relaxed font-light">
+                      {vertical.shortDesc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Accent Chip */}
+                  <div className="mt-5 pt-3.5 border-t border-[#1E3B2C]/70 flex items-center justify-between">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5DFC5]/90 bg-[#14291F] px-2.5 py-1 rounded-md border border-[#2B4E3C]">
+                      {vertical.badge}
+                    </span>
+                    <span className="text-xs font-semibold text-[#E5C365] group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                      Inquire →
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-serif font-semibold text-base text-[#F4EFEA] mb-1 group-hover:text-[#E5C365] transition-colors">
-                  {pillar.title}
-                </h3>
-                <p className="text-xs text-[#A3997E] leading-relaxed">
-                  {pillar.description}
-                </p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Section Divider with Badge */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent flex-1" />
+          <span className="px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-[11px] font-mono uppercase tracking-[0.2em] text-[#E5C365] font-semibold">
+            Detailed Technical Scope & Deliverables
+          </span>
+          <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent flex-1" />
         </div>
 
         {/* MOBILE VIEW (Under lg): In-Place Expandable Accordion with Next/Prev Switcher */}

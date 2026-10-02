@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, Sparkles } from "lucide-react";
-import WhatsAppIcon from "./WhatsAppIcon";
 import { COMPANY_INFO } from "@/data/companyData";
 import confetti from "canvas-confetti";
 
@@ -27,13 +26,6 @@ export default function ContactSection() {
         colors: ["#D4AF37", "#E5C365", "#1E3B2C"],
       });
     } catch {}
-  };
-
-  const handleWhatsApp = () => {
-    const text = encodeURIComponent(
-      `Hello ARHA Interiors! I am reaching out regarding a turnkey corporate interior fit-out project in Bengaluru.`
-    );
-    window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, "_blank");
   };
 
   return (
@@ -120,15 +112,15 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* WhatsApp Quick Connect */}
+                {/* Direct Call Quick Connect */}
                 <div className="pt-2">
-                  <button
-                    onClick={handleWhatsApp}
-                    className="w-full py-3 rounded-xl bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-600/50 text-emerald-200 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
+                  <a
+                    href={`tel:${COMPANY_INFO.phoneRaw}`}
+                    className="w-full py-3 rounded-xl bg-[#14291F] hover:bg-[#1E3B2C] border border-[#2B4E3C] hover:border-[#D4AF37]/50 text-[#FFF2D6] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md group"
                   >
-                    <WhatsAppIcon className="w-4 h-4 text-emerald-300" />
-                    <span>Chat on WhatsApp Directly</span>
-                  </button>
+                    <Phone className="w-4 h-4 text-[#E5C365] group-hover:scale-110 transition-transform" />
+                    <span>Call Direct: {COMPANY_INFO.phone}</span>
+                  </a>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Calculator, Clock, Calendar, CheckSquare, ArrowRight, ShieldCheck, Sparkles, Building } from "lucide-react";
+import { Calculator, Clock, Calendar, CheckSquare, ArrowRight, ShieldCheck, Sparkles, Building, Home, Building2, Cog, Sofa } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 interface CostEstimatorProps {
@@ -14,7 +14,7 @@ interface CostEstimatorProps {
 }
 
 export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) {
-  const [spaceType, setSpaceType] = useState<string>("Corporate IT / Enterprise Office");
+  const [spaceType, setSpaceType] = useState<string>("Commercial Interiors");
   const [area, setArea] = useState<number>(15000);
   const [scopes, setScopes] = useState<string[]>([
     "Civil & Partition Works",
@@ -24,10 +24,10 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
   ]);
 
   const spaceTypes = [
-    { label: "Corporate IT & Enterprise", icon: Building },
-    { label: "Executive Headquarters", icon: Sparkles },
-    { label: "Managed Co-Working Hub", icon: Building },
-    { label: "Commercial Experience Center", icon: Sparkles },
+    { label: "Commercial Interiors", icon: Building2 },
+    { label: "Residential Interiors", icon: Home },
+    { label: "Turnkey Solutions", icon: Cog },
+    { label: "Furniture & Fit-Out Works", icon: Sofa },
   ];
 
   const availableScopes = [

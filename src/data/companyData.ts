@@ -28,6 +28,15 @@ export interface StepItem {
   activities: string[];
 }
 
+export interface CoreVertical {
+  id: string;
+  title: string;
+  subtitle: string;
+  shortDesc: string;
+  badge: string;
+  icon: "home" | "building" | "turnkey" | "furniture";
+}
+
 export const COMPANY_INFO = {
   name: "ARHA INTERIORS",
   legalName: "Arha Interiors",
@@ -36,9 +45,8 @@ export const COMPANY_INFO = {
   coreStatement: "End-to-end design, fit-out and execution for corporate, commercial and institutional spaces.",
   handoverQuote: "A single-point experience from concept through handover.",
   thankYouQuote: "Thank you for your time, trust and the opportunity to be a part of your vision. Together, let's create spaces that grow with you.",
-  phone: "+91 73 381 383 61",
-  phoneRaw: "+917338138361",
-  whatsapp: "917338138361",
+  phone: "+91 84318 93658",
+  phoneRaw: "+918431893658",
   email: "arhainteriors369@gmail.com",
   location: "Bengaluru, Karnataka, India",
   proprietor: {
@@ -66,6 +74,41 @@ export const COMPANY_INFO = {
     { title: "Quality Execution", description: "Corporate-governed quality benchmarks, flawless joinery detailing, and zero-defect handovers." },
   ]
 };
+
+export const CORE_SERVICE_VERTICALS: CoreVertical[] = [
+  {
+    id: "residential",
+    title: "RESIDENTIAL INTERIORS",
+    subtitle: "Villas, Penthouses & Private Residences",
+    shortDesc: "Bespoke spatial design, custom modular kitchens, luxury living rooms, and private sanctuary fit-outs.",
+    badge: "Bespoke Luxury",
+    icon: "home"
+  },
+  {
+    id: "commercial",
+    title: "COMMERCIAL INTERIORS",
+    subtitle: "Corporate Workspaces & Tech Hubs",
+    shortDesc: "High-performance offices, collaborative breakout zones, agile team suites, and branded corporate facilities.",
+    badge: "Enterprise Grade",
+    icon: "building"
+  },
+  {
+    id: "turnkey",
+    title: "TURNKEY SOLUTIONS",
+    subtitle: "Single-Window Concept to Handover",
+    shortDesc: "Single-point civil modifications, integrated MEP, HVAC, fire safety, and schedule-linked governance.",
+    badge: "End-to-End Delivery",
+    icon: "turnkey"
+  },
+  {
+    id: "furniture",
+    title: "FURNITURE & FIT-OUT WORKS",
+    subtitle: "Custom Joinery & Architectural Millwork",
+    shortDesc: "Precision factory-crafted reception desks, acoustic paneling, ergonomic workstations, and bespoke cabinetry.",
+    badge: "Master Craftsmanship",
+    icon: "furniture"
+  }
+];
 
 export const ENTERPRISE_CLIENTS = [
   { name: "Google India", industry: "Technology", highlight: "Collaborative campus zones & open lounge environments" },

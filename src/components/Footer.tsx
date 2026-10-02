@@ -2,7 +2,6 @@
 
 import React from "react";
 import ArhaLogo from "./ArhaLogo";
-import WhatsAppIcon from "./WhatsAppIcon";
 import { COMPANY_INFO } from "@/data/companyData";
 import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, Sparkles } from "lucide-react";
 
@@ -19,7 +18,7 @@ export default function Footer() {
           
           {/* Brand Col - Full Width on Mobile (col-span-2), 2 Cols on Large */}
           <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-            <ArhaLogo size="lg" />
+            <ArhaLogo size="lg" showSubtitle={true} />
             <p className="text-xs text-[#A3997E] leading-relaxed max-w-md">
               End-to-end civil contracting, interior architecture, and turnkey MEP fit-outs for enterprise, commercial, and institutional spaces. A single-point experience from concept through handover.
             </p>
@@ -141,24 +140,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Floating Sticky WhatsApp Button (Optimized for Mobile & Desktop) */}
-      <a
-        href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Hi%20ARHA%20Interiors%2C%20I%20am%20interested%20in%20a%20turnkey%20interior%20fit-out%20consultation.`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 sm:bottom-6 sm:left-6 sm:right-auto z-40 flex items-center justify-center gap-2 w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_10px_30px_rgba(5,150,105,0.45)] border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 text-xs font-bold uppercase tracking-wider group cursor-pointer"
-        title="Instant WhatsApp Consultation"
-        aria-label="Instant WhatsApp Consultation"
-      >
-        {/* Live dot only on desktop/tablet, hidden on mobile */}
-        <span className="relative hidden sm:flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
-        </span>
-        <WhatsAppIcon className="w-5 h-5 sm:w-4 sm:h-4 text-white" />
-        <span className="hidden sm:inline">WhatsApp Direct</span>
-      </a>
     </footer>
   );
 }

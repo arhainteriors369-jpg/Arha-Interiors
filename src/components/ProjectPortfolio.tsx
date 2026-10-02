@@ -26,11 +26,11 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const categories = [
-    { label: "All Projects", value: "all" },
-    { label: "Corporate Workplaces", value: "corporate" },
-    { label: "Executive Suites", value: "executive" },
-    { label: "Breakout & Recreation", value: "breakout" },
-    { label: "Turnkey Architecture", value: "turnkey" },
+    { label: "All Works", value: "all" },
+    { label: "Commercial Interiors", value: "corporate" },
+    { label: "Executive & Residential", value: "executive" },
+    { label: "Turnkey Solutions", value: "turnkey" },
+    { label: "Furniture & Fit-Out Works", value: "breakout" },
   ];
 
   const filteredProjects =
