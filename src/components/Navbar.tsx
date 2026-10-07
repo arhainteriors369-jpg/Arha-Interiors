@@ -36,14 +36,14 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#07110C]/95 backdrop-blur-md border-b border-[#D4AF37]/20 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-            : "bg-gradient-to-b from-[#07110C]/95 via-[#07110C]/70 to-transparent py-3 sm:py-5"
+            ? "bg-[#07110C]/95 backdrop-blur-md border-b border-[#D4AF37]/20 py-2 sm:py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+            : "bg-gradient-to-b from-[#07110C]/95 via-[#07110C]/70 to-transparent py-2.5 sm:py-5"
         }`}
       >
-        <div className="w-full px-3.5 sm:px-6 lg:px-10 xl:px-14">
-          <div className="flex items-center justify-between gap-2">
+        <div className="w-full px-3 sm:px-6 lg:px-10 xl:px-14">
+          <div className="flex items-center justify-between gap-1.5 sm:gap-2">
             {/* Single Clean Brand Logo - Never Duplicated */}
-            <a href="#" className="shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98]">
+            <a href="#" className="shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98] flex items-center">
               <ArhaLogo size="sm" />
             </a>
 
@@ -62,7 +62,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             </nav>
 
             {/* Right Action Controls */}
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
               {/* Direct Call Link (Desktop) */}
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
@@ -82,10 +82,10 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
 
-              {/* Mobile Compact Proposal Button - Never Overflows */}
+              {/* Mobile Adaptive Proposal Button - only appears when width >= 380px to protect hamburger layout */}
               <button
                 onClick={onOpenConsultation}
-                className="sm:hidden px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] to-[#E5C365] shadow-md cursor-pointer whitespace-nowrap shrink-0"
+                className="hidden min-[380px]:inline-flex sm:hidden px-2.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] to-[#E5C365] shadow-md cursor-pointer whitespace-nowrap shrink-0 active:scale-95 transition-transform"
               >
                 Proposal
               </button>
@@ -93,7 +93,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               {/* Mobile / Tablet Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-1.5 sm:p-2 rounded-lg text-[#E5DFC5] hover:text-[#E5C365] hover:bg-[#14291F] border border-transparent hover:border-[#2B4E3C] transition-colors shrink-0"
+                className="lg:hidden p-2 rounded-xl text-[#E5DFC5] hover:text-[#E5C365] bg-[#14291F]/80 border border-[#2B4E3C]/80 hover:border-[#D4AF37]/60 transition-colors shrink-0 flex items-center justify-center min-w-[38px] min-h-[38px] active:scale-95"
                 aria-label="Toggle Navigation"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -104,14 +104,14 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
 
         {/* Mobile Dropdown Menu Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#07110C]/98 border-b border-[#D4AF37]/30 px-5 sm:px-8 py-6 space-y-4 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-top-3 duration-200">
-            <nav className="grid grid-cols-2 gap-2 pb-4 border-b border-[#1E3B2C]/60">
+          <div className="lg:hidden bg-[#07110C]/98 border-b border-[#D4AF37]/30 px-4 sm:px-8 py-5 space-y-4 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-top-3 duration-200 max-h-[calc(100dvh-4.5rem)] overflow-y-auto">
+            <nav className="grid grid-cols-2 gap-1.5 sm:gap-2 pb-4 border-b border-[#1E3B2C]/60">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-medium tracking-wider uppercase text-[#E5DFC5] hover:text-[#E5C365] p-2 rounded-lg hover:bg-[#14291F] transition-colors"
+                  className="text-xs font-medium tracking-wider uppercase text-[#E5DFC5] hover:text-[#E5C365] p-2.5 rounded-lg hover:bg-[#14291F] transition-colors active:bg-[#14291F]"
                 >
                   {link.name}
                 </a>
@@ -122,18 +122,18 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#14291F] border border-[#2B4E3C] text-xs font-mono text-[#E5DFC5] hover:text-[#E5C365]"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3 rounded-xl bg-[#14291F] border border-[#2B4E3C] text-[11px] sm:text-xs font-mono text-[#E5DFC5] hover:text-[#E5C365] active:scale-98"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#E5C365]" />
-                  <span>Call Us</span>
+                  <Phone className="w-3.5 h-3.5 text-[#E5C365] shrink-0" />
+                  <span className="truncate">Call Us</span>
                 </a>
 
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
-                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#14291F] border border-[#2B4E3C] text-xs font-mono text-[#E5DFC5] hover:text-[#E5C365]"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2 py-2.5 px-2 sm:px-3 rounded-xl bg-[#14291F] border border-[#2B4E3C] text-[11px] sm:text-xs font-mono text-[#E5DFC5] hover:text-[#E5C365] active:scale-98"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#E5C365]" />
-                  <span>Email Us</span>
+                  <Mail className="w-3.5 h-3.5 text-[#E5C365] shrink-0" />
+                  <span className="truncate">Email Us</span>
                 </a>
               </div>
 
@@ -142,14 +142,14 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] shadow-lg cursor-pointer"
+                className="w-full py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] shadow-lg cursor-pointer active:scale-98 transition-transform"
               >
                 Request Turnkey Proposal
               </button>
 
-              <div className="text-center pt-2 text-[10px] text-[#A3997E] flex items-center justify-center gap-1.5 font-mono">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#E5C365]" />
-                <span>GST: 29ESKPS8538H1ZT • Bengaluru</span>
+              <div className="text-center pt-1 text-[10px] text-[#A3997E] flex items-center justify-center gap-1.5 font-mono">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#E5C365] shrink-0" />
+                <span className="truncate">GST: 29ESKPS8538H1ZT • Bengaluru</span>
               </div>
             </div>
           </div>

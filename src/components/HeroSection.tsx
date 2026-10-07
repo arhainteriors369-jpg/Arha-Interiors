@@ -10,7 +10,7 @@ interface HeroSectionProps {
 export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
   return (
     <>
-      <section className="relative min-h-[82vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16">
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12 sm:pt-28 sm:pb-16">
         {/* High-Visibility Architectural Video Background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           <video
@@ -30,68 +30,68 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
         </div>
 
         {/* Hero Content - Perfectly Proportioned on Mobile & Desktop */}
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 text-center flex flex-col items-center">
-          {/* Subtle 1-Line Badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full bg-[#07110C]/85 backdrop-blur-md border border-[#D4AF37]/40 shadow-md mb-3.5 sm:mb-5">
+        <div className="relative z-10 w-full px-3.5 sm:px-6 lg:px-10 xl:px-14 text-center flex flex-col items-center">
+          {/* Subtle Responsive Badge - Full Client Priority Text */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1 rounded-full bg-[#07110C]/85 backdrop-blur-md border border-[#D4AF37]/40 shadow-md mb-3.5 sm:mb-5 max-w-full">
             <Sparkles className="w-3 h-3 text-[#E5C365] shrink-0" />
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.16em] font-semibold text-[#F7E7B4] whitespace-nowrap">
-              Civil & Interior Turnkey Fit out Projects - Bangalore
+            <span className="text-[9.5px] min-[360px]:text-[10px] sm:text-xs uppercase tracking-[0.06em] min-[380px]:tracking-[0.12em] sm:tracking-[0.16em] font-semibold text-[#F7E7B4] text-center leading-normal">
+              Civil & Interior Turnkey Fit-Out Projects • Bangalore
             </span>
           </div>
 
-          {/* Headline with Clean Two-Line Mobile Break */}
-          <h1 className="w-full max-w-4xl font-serif font-bold text-white text-[29px] xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.13] tracking-tight mb-3 sm:mb-4 drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
-            Spaces That Grow <br />
-            <span className="gold-gradient-text">With You.</span>
+          {/* Headline with Adaptive Sizing */}
+          <h1 className="w-full max-w-4xl font-serif font-bold text-white text-[27px] min-[360px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.12] sm:leading-[1.13] tracking-tight mb-3 sm:mb-4 drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+            Spaces That Grow <br className="hidden sm:inline" />
+            <span className="gold-gradient-text block sm:inline">With You.</span>
           </h1>
 
           {/* Clean 1-Sentence Subtitle */}
-          <p className="max-w-md sm:max-w-xl text-xs sm:text-base md:text-lg text-white/95 font-light leading-relaxed mb-6 sm:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] px-2">
+          <p className="max-w-md sm:max-w-xl text-xs sm:text-base md:text-lg text-white/95 font-light leading-relaxed mb-5 sm:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] px-2">
             Refined architectural design, civil engineering, and bespoke turnkey fit-outs for enterprise workspaces.
           </p>
 
-          {/* Action Buttons: Sleek Side-by-Side Row on Mobile */}
-          <div className="flex flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-none">
+          {/* Action Buttons: Sleek Adaptive Row on Mobile */}
+          <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 w-full max-w-xs sm:max-w-none">
             <button
               onClick={onOpenConsultation}
-              className="flex-1 sm:flex-initial px-5 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="flex-1 sm:flex-initial px-3.5 py-3 sm:px-8 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] via-[#E5C365] to-[#D4AF37] hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap min-h-[44px]"
             >
               <span>Proposal</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 shrink-0" />
             </button>
 
             <a
               href="#portfolio"
-              className="flex-1 sm:flex-initial px-5 py-3 sm:px-7 sm:py-4 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-white bg-[#07110C]/80 hover:bg-[#14291F] backdrop-blur-md border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 whitespace-nowrap shadow-xl"
+              className="flex-1 sm:flex-initial px-3.5 py-3 sm:px-7 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wider text-white bg-[#07110C]/80 hover:bg-[#14291F] backdrop-blur-md border border-[#D4AF37]/40 hover:border-[#D4AF37] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 whitespace-nowrap shadow-xl min-h-[44px]"
             >
-              <Building2 className="w-3.5 h-3.5 text-[#E5C365]" />
+              <Building2 className="w-3.5 h-3.5 text-[#E5C365] shrink-0" />
               <span>Works</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Dedicated Trust Metrics Strip - Never Overlaps or Gets Covered */}
-      <div className="w-full bg-[#060E09] border-y border-[#D4AF37]/25 py-4 sm:py-5 px-4 sm:px-6 lg:px-10 xl:px-14 relative z-20 shadow-md">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
-          <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-[#0B1912]/50 border border-[#1E3B2C]/40">
+      {/* Dedicated Trust Metrics Strip - Clean Padding and Seamless Viewport Alignment */}
+      <div className="w-full bg-[#060E09] border-y border-[#D4AF37]/25 py-3.5 sm:py-5 px-3 sm:px-6 lg:px-10 xl:px-14 relative z-20 shadow-md">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-6 text-center">
+          <div className="flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl bg-[#0B1912]/60 border border-[#1E3B2C]/40">
             <span className="font-serif font-bold text-[#E5C365] text-lg sm:text-2xl">16+</span>
-            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5">Years Experience</span>
+            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5 leading-tight">Years Experience</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-[#0B1912]/50 border border-[#1E3B2C]/40">
+          <div className="flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl bg-[#0B1912]/60 border border-[#1E3B2C]/40">
             <span className="font-serif font-bold text-[#E5C365] text-lg sm:text-2xl">100%</span>
-            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5">Turnkey Delivery</span>
+            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5 leading-tight">Turnkey Delivery</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-[#0B1912]/50 border border-[#1E3B2C]/40">
+          <div className="flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl bg-[#0B1912]/60 border border-[#1E3B2C]/40">
             <span className="font-serif font-bold text-[#E5C365] text-lg sm:text-2xl">15+</span>
-            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5">Fortune Clients</span>
+            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5 leading-tight">Fortune Clients</span>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-2 rounded-xl bg-[#0B1912]/50 border border-[#1E3B2C]/40">
+          <div className="flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl bg-[#0B1912]/60 border border-[#1E3B2C]/40">
             <span className="font-serif font-bold text-[#E5C365] text-lg sm:text-2xl">HSE</span>
-            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5">Compliant</span>
+            <span className="text-[10px] sm:text-xs text-[#A3997E] uppercase tracking-wider font-medium mt-0.5 leading-tight">Compliant</span>
           </div>
         </div>
       </div>
