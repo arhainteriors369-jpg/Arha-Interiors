@@ -51,7 +51,17 @@ export const COMPANY_INFO = {
   alternatePhone: "+91 84318 93658",
   alternatePhoneRaw: "+918431893658",
   email: "arhainteriors369@gmail.com",
-  location: "Bengaluru, Karnataka, India",
+  location: "Hongasandra, Bengaluru, Karnataka",
+  address: {
+    line1: "No - 4, 8th Cross, 7th Main Road",
+    line2: "Balaji Layout, Hongasandra",
+    city: "Bengaluru",
+    pincode: "560076",
+    state: "Karnataka",
+    country: "India",
+    full: "No - 4, 8th Cross, 7th Main Road, Balaji Layout, Hongasandra, Bengaluru - 560076.",
+    mapsQuery: "No+4+8th+Cross+7th+Main+Road+Balaji+Layout+Hongasandra+Bengaluru+560076",
+  },
   proprietor: {
     name: "Senthil Karuppasamy. R",
     role: "Proprietor & Principal Director",
@@ -70,7 +80,8 @@ export const COMPANY_INFO = {
     enterpriseType: "Micro • 2026–27",
     majorActivity: "Manufacturing & Interior Fit-outs",
     udyamDate: "20/08/2026",
-    city: "Bengaluru, Karnataka"
+    city: "Bengaluru, Karnataka",
+    address: "No - 4, 8th Cross, 7th Main Road, Balaji Layout, Hongasandra, Bengaluru - 560076."
   },
   pillars: [
     { title: "People Centric", description: "Crafting ergonomic, human-focused spaces that elevate collaboration, wellness, and daily productivity." },

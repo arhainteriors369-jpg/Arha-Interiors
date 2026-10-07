@@ -125,8 +125,10 @@ export default function Footer() {
                 <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#E5C365] transition-colors block break-all text-[11px]">
                   {COMPANY_INFO.email}
                 </a>
-                <div className="text-[#A3997E] text-[11px]">
-                  Bengaluru, Karnataka
+                <div className="text-[#A3997E] text-[11px] leading-relaxed pt-1">
+                  {COMPANY_INFO.address.line1},<br />
+                  {COMPANY_INFO.address.line2},<br />
+                  {COMPANY_INFO.address.city} – {COMPANY_INFO.address.pincode}
                 </div>
               </div>
             </div>

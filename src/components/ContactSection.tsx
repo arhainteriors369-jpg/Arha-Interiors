@@ -124,12 +124,14 @@ export default function ContactSection() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase font-mono tracking-wider text-[#A3997E]">Headquarters & Hub</div>
-                    <div className="text-sm font-medium text-[#FFF2D6]">
-                      {COMPANY_INFO.location}
+                    <div className="text-xs uppercase font-mono tracking-wider text-[#A3997E]">Registered Office & Headquarters</div>
+                    <div className="text-sm font-medium text-[#FFF2D6] leading-relaxed mt-0.5">
+                      {COMPANY_INFO.address.line1},<br />
+                      {COMPANY_INFO.address.line2},<br />
+                      <span className="font-semibold text-[#E5C365]">{COMPANY_INFO.address.city} – {COMPANY_INFO.address.pincode}</span>
                     </div>
-                    <div className="text-[11px] text-[#A3997E] mt-0.5">
-                      Serving Whitefield, ORR, Manyata, Electronic City & Pan-Karnataka
+                    <div className="text-[11px] text-[#A3997E] mt-1.5">
+                      Serving Hongasandra, HSR Layout, Koramangala, Electronic City, Whitefield & Pan-Karnataka
                     </div>
                   </div>
                 </div>

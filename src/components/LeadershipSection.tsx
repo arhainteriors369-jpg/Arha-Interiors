@@ -64,7 +64,7 @@ export default function LeadershipSection() {
                   {COMPANY_INFO.proprietor.name}
                 </h3>
                 <p className="text-xs text-[#A3997E] mt-0.5">
-                  ARHA INTERIORS • Bengaluru, Karnataka
+                  ARHA INTERIORS • Hongasandra, Bengaluru - 560076
                 </p>
               </div>
 
