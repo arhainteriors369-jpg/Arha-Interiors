@@ -53,12 +53,14 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
   const calculateTimeline = () => {
     if (area < 5000) return "4 – 6 Weeks";
     if (area < 15000) return "6 – 8 Weeks";
-    if (area < 30000) return "8 – 12 Weeks";
-    return "12 – 16 Weeks (Fast-track)";
+    if (area < 35000) return "8 – 12 Weeks";
+    if (area < 75000) return "12 – 16 Weeks";
+    if (area < 125000) return "16 – 20 Weeks";
+    return "20 – 26 Weeks (Fast-track)";
   };
 
   const estimatedTimeline = calculateTimeline();
-  const estimatedDedicatedTeam = Math.max(12, Math.round(area / 1000 * 2.5));
+  const estimatedDedicatedTeam = Math.max(12, Math.round((area / 1000) * 2.5));
 
   const handleApply = () => {
     onEstimateSubmit({
@@ -126,13 +128,13 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
                     2. Approximate Floor Area (sq. ft.)
                   </label>
                   <span className="font-mono text-base font-bold text-[#FFF2D6] px-3 py-1 rounded bg-[#14291F] border border-[#2B4E3C]">
-                    {area.toLocaleString()} sq. ft.
+                    {area.toLocaleString("en-IN")} sq. ft.
                   </span>
                 </div>
                 <input
                   type="range"
                   min="2000"
-                  max="60000"
+                  max="200000"
                   step="1000"
                   value={area}
                   onChange={(e) => setArea(Number(e.target.value))}
@@ -140,8 +142,8 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
                 />
                 <div className="flex justify-between text-[10px] text-[#A3997E] font-mono mt-2">
                   <span>2,000 sq.ft (Boutique)</span>
-                  <span>25,000 sq.ft (Campus Wing)</span>
-                  <span>60,000+ sq.ft (Full Floorplate)</span>
+                  <span>1,00,000 sq.ft (Campus Wing)</span>
+                  <span>2,00,000+ sq.ft (Full Floorplate)</span>
                 </div>
               </div>
 
@@ -220,7 +222,7 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
                     <div>
                       <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E]">Workplace Footprint</div>
                       <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6]">
-                        {area.toLocaleString()} sq. ft.
+                        {area.toLocaleString("en-IN")} sq. ft.
                       </div>
                     </div>
                   </div>

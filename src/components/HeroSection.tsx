@@ -35,7 +35,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full bg-[#07110C]/85 backdrop-blur-md border border-[#D4AF37]/40 shadow-md mb-3.5 sm:mb-5">
             <Sparkles className="w-3 h-3 text-[#E5C365] shrink-0" />
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.16em] font-semibold text-[#F7E7B4] whitespace-nowrap">
-              Turnkey Fit-Outs • Bengaluru
+              Civil & Interior Turnkey Fit out Projects - Bangalore
             </span>
           </div>
 
