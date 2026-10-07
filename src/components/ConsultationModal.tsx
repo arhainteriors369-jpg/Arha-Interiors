@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import confetti from "canvas-confetti";
-import { X, CheckCircle, Send, Phone, Mail, Sparkles, ShieldCheck } from "lucide-react";
+import { X, CheckCircle, Send, Phone, Mail, Sparkles, ShieldCheck, MessageCircle } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 
 interface ConsultationModalProps {
@@ -93,16 +93,27 @@ export default function ConsultationModal({
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#14291F] text-[#FFF2D6] hover:bg-[#1E3B2C] border border-[#D4AF37]/50 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                  className="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#14291F] text-[#FFF2D6] hover:bg-[#1E3B2C] border border-[#D4AF37]/50 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                 >
                   <Phone className="w-4 h-4 text-[#E5C365]" />
-                  <span>Call Directly: {COMPANY_INFO.phone}</span>
+                  <span>Call: {COMPANY_INFO.phone}</span>
                 </a>
+
+                <a
+                  href={COMPANY_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 hover:bg-emerald-900 border border-emerald-700/60 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                >
+                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                  <span>WhatsApp Chat</span>
+                </a>
+
                 <button
                   onClick={onClose}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#08120D] text-[#A3997E] hover:text-white border border-[#2B4E3C] cursor-pointer"
+                  className="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#08120D] text-[#A3997E] hover:text-white border border-[#2B4E3C] cursor-pointer"
                 >
-                  Close Window
+                  Close
                 </button>
               </div>
             </div>

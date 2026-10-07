@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, Sparkles } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, Sparkles, MessageCircle } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 import confetti from "canvas-confetti";
 
@@ -58,20 +58,42 @@ export default function ContactSection() {
               </h3>
 
               <div className="space-y-6">
-                {/* Phone */}
+                {/* Phone & WhatsApp */}
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[#14291F] border border-[#D4AF37]/40 flex items-center justify-center shrink-0 text-[#E5C365]">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase font-mono tracking-wider text-[#A3997E]">Direct Call / Mobile</div>
-                    <a
-                      href={`tel:${COMPANY_INFO.phoneRaw}`}
-                      className="text-base font-serif font-bold text-[#FFF2D6] hover:text-[#E5C365] transition-colors"
-                    >
-                      {COMPANY_INFO.phone}
-                    </a>
-                    <div className="text-[11px] text-emerald-400 mt-0.5">
+                  <div className="flex-1">
+                    <div className="text-xs uppercase font-mono tracking-wider text-[#A3997E]">
+                      Corporate Direct Line & WhatsApp
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3 mt-1">
+                      <a
+                        href={`tel:${COMPANY_INFO.phoneRaw}`}
+                        className="text-base font-serif font-bold text-[#FFF2D6] hover:text-[#E5C365] transition-colors"
+                      >
+                        {COMPANY_INFO.phone}
+                      </a>
+                      <a
+                        href={COMPANY_INFO.whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 text-[11px] font-medium transition-colors"
+                      >
+                        <MessageCircle className="w-3 h-3 text-emerald-400" />
+                        <span>Chat</span>
+                      </a>
+                    </div>
+                    <div className="text-[11px] text-[#A3997E] mt-1 flex items-center gap-2">
+                      <span>Alt Personal Line:</span>
+                      <a
+                        href={`tel:${COMPANY_INFO.alternatePhoneRaw}`}
+                        className="text-[#C5B899] hover:text-[#FFF2D6] font-mono underline underline-offset-2"
+                      >
+                        {COMPANY_INFO.alternatePhone}
+                      </a>
+                    </div>
+                    <div className="text-[11px] text-emerald-400 mt-1">
                       Available Mon–Sat: 9:00 AM – 7:30 PM IST
                     </div>
                   </div>
@@ -112,14 +134,24 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Direct Call Quick Connect */}
-                <div className="pt-2">
+                {/* Quick Connect Actions */}
+                <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <a
                     href={`tel:${COMPANY_INFO.phoneRaw}`}
-                    className="w-full py-3 rounded-xl bg-[#14291F] hover:bg-[#1E3B2C] border border-[#2B4E3C] hover:border-[#D4AF37]/50 text-[#FFF2D6] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md group"
+                    className="py-3 px-4 rounded-xl bg-[#14291F] hover:bg-[#1E3B2C] border border-[#2B4E3C] hover:border-[#D4AF37]/50 text-[#FFF2D6] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md group"
                   >
-                    <Phone className="w-4 h-4 text-[#E5C365] group-hover:scale-110 transition-transform" />
-                    <span>Call Direct: {COMPANY_INFO.phone}</span>
+                    <Phone className="w-4 h-4 text-[#E5C365] group-hover:scale-110 transition-transform shrink-0" />
+                    <span>Call Direct</span>
+                  </a>
+
+                  <a
+                    href={COMPANY_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-3 px-4 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-700/60 hover:border-emerald-500 text-emerald-200 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md group"
+                  >
+                    <MessageCircle className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform shrink-0" />
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>

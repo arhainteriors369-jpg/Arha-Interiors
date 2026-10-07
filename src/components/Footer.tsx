@@ -3,7 +3,7 @@
 import React from "react";
 import ArhaLogo from "./ArhaLogo";
 import { COMPANY_INFO } from "@/data/companyData";
-import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, Sparkles } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, ArrowUp, Sparkles, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -102,9 +102,25 @@ export default function Footer() {
                 <div className="font-mono text-[10px] text-[#A3997E]">{COMPANY_INFO.registrations.udyam}</div>
               </div>
 
-              <div className="pt-1 text-xs text-[#E5DFC5] space-y-1">
-                <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="hover:text-[#E5C365] transition-colors block font-mono">
-                  {COMPANY_INFO.phone}
+              <div className="pt-1 text-xs text-[#E5DFC5] space-y-1.5">
+                <a href={`tel:${COMPANY_INFO.phoneRaw}`} className="hover:text-[#E5C365] transition-colors flex items-center gap-1.5 font-mono">
+                  <Phone className="w-3 h-3 text-[#E5C365]" />
+                  <span>{COMPANY_INFO.phone}</span>
+                </a>
+                <a
+                  href={COMPANY_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 font-mono text-[11px]"
+                >
+                  <MessageCircle className="w-3 h-3 text-emerald-400" />
+                  <span>WhatsApp Available</span>
+                </a>
+                <a
+                  href={`tel:${COMPANY_INFO.alternatePhoneRaw}`}
+                  className="text-[#A3997E] hover:text-[#FFF2D6] transition-colors flex items-center gap-1.5 font-mono text-[11px]"
+                >
+                  <span>Alt Direct: {COMPANY_INFO.alternatePhone}</span>
                 </a>
                 <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#E5C365] transition-colors block break-all text-[11px]">
                   {COMPANY_INFO.email}

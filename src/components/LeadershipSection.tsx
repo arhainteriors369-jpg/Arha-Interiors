@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { COMPANY_INFO } from "@/data/companyData";
-import { Award, Briefcase, Phone, Mail, ShieldCheck, Check, Copy, UserCheck, Layers, Sparkles } from "lucide-react";
+import { Award, Briefcase, Phone, Mail, ShieldCheck, Check, Copy, UserCheck, Layers, Sparkles, MessageCircle } from "lucide-react";
 
 export default function LeadershipSection() {
   const [copiedGst, setCopiedGst] = useState(false);
@@ -93,18 +93,39 @@ export default function LeadershipSection() {
             </div>
 
             {/* Direct Connect Action Row */}
-            <div className="flex flex-wrap items-center gap-4 text-xs">
+            <div className="flex flex-wrap items-center gap-3 text-xs">
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#E5DFC5] transition-colors"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#FFF2D6] transition-colors"
+                title={`Company Line: ${COMPANY_INFO.phone}`}
               >
                 <Phone className="w-3.5 h-3.5 text-[#E5C365]" />
-                <span className="font-mono">{COMPANY_INFO.phone}</span>
+                <span className="font-mono font-medium">{COMPANY_INFO.phone}</span>
+              </a>
+
+              <a
+                href={COMPANY_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700/60 hover:border-emerald-400 text-emerald-300 transition-colors"
+                title="Direct WhatsApp"
+              >
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <span>WhatsApp</span>
+              </a>
+
+              <a
+                href={`tel:${COMPANY_INFO.alternatePhoneRaw}`}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0F2018] border border-[#1E3B2C] hover:border-[#D4AF37] text-[#C5B899] hover:text-[#FFF2D6] transition-colors"
+                title="Personal Direct Line"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#A3997E]" />
+                <span className="font-mono">{COMPANY_INFO.alternatePhone} (Personal Direct)</span>
               </a>
 
               <a
                 href={`mailto:${COMPANY_INFO.email}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#E5DFC5] transition-colors"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#E5DFC5] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-[#E5C365]" />
                 <span>{COMPANY_INFO.email}</span>

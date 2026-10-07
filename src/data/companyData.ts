@@ -45,8 +45,11 @@ export const COMPANY_INFO = {
   coreStatement: "End-to-end design, fit-out and execution for corporate, commercial and institutional spaces.",
   handoverQuote: "A single-point experience from concept through handover.",
   thankYouQuote: "Thank you for your time, trust and the opportunity to be a part of your vision. Together, let's create spaces that grow with you.",
-  phone: "+91 84318 93658",
-  phoneRaw: "+918431893658",
+  phone: "+91 73381 38361",
+  phoneRaw: "+917338138361",
+  whatsappUrl: "https://wa.me/917338138361?text=Hello%20Arha%20Interiors%2C%20I%20would%20like%20to%20inquire%20about%20turnkey%20fit-out%20services.",
+  alternatePhone: "+91 84318 93658",
+  alternatePhoneRaw: "+918431893658",
   email: "arhainteriors369@gmail.com",
   location: "Bengaluru, Karnataka, India",
   proprietor: {
@@ -54,6 +57,8 @@ export const COMPANY_INFO = {
     role: "Proprietor & Principal Director",
     experienceYears: 16,
     previousFirm: "Ocean Life Spaces India Private Limited",
+    personalPhone: "+91 84318 93658",
+    personalPhoneRaw: "+918431893658",
     bio: "With over 16 years of hands-on expertise in leading high-impact corporate, commercial and institutional turnkey fit-outs, Senthil Karuppasamy brings corporate-level project governance, rigorous engineering standards, and single-window accountability to ARHA Interiors."
   },
   registrations: {

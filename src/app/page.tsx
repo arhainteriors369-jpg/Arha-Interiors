@@ -14,6 +14,7 @@ import LeadershipSection from "@/components/LeadershipSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ConsultationModal from "@/components/ConsultationModal";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -91,6 +92,9 @@ export default function Home() {
         prefillService={selectedService}
         prefillArea={estimatedArea}
       />
+
+      {/* Floating WhatsApp Quick Connect */}
+      <FloatingWhatsApp />
     </main>
   );
 }
