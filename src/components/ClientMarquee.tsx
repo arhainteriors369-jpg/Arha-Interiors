@@ -72,16 +72,16 @@ export default function ClientMarquee() {
 
       {/* Verified Government Credentials Badge Strip */}
       <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 mt-6 pt-6 border-t border-[#1E3B2C]/60">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 text-xs text-center sm:text-left">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2 text-[#E5DFC5]/80">
-            <ShieldCheck className="w-4 h-4 text-[#E5C365] shrink-0" />
+        <div className="flex flex-wrap items-center justify-center md:justify-between gap-4 text-xs">
+          <div className="flex items-center gap-2 text-[#E5DFC5]/80">
+            <ShieldCheck className="w-4 h-4 text-[#E5C365]" />
             <span className="font-medium">Statutory Registrations:</span>
-            <span className="text-[#A3997E]">Govt Certified Micro Enterprise • Bengaluru</span>
+            <span className="text-[#A3997E]">Government Certified Micro Enterprise • Bengaluru</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {/* GST Chip */}
-            <div className="flex items-center gap-2 px-2.5 py-1.5 sm:px-3 rounded-lg bg-[#0F2016] border border-[#2B4E3C] text-[10px] sm:text-[11px] text-[#E5DFC5]">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0F2016] border border-[#2B4E3C] text-[11px] text-[#E5DFC5]">
               <span className="text-[#A3997E]">GSTIN:</span>
               <span className="font-mono text-[#E5C365] font-semibold">{COMPANY_INFO.registrations.gstin}</span>
               <button
@@ -94,7 +94,7 @@ export default function ClientMarquee() {
             </div>
 
             {/* Udyam Chip */}
-            <div className="flex items-center gap-2 px-2.5 py-1.5 sm:px-3 rounded-lg bg-[#0F2016] border border-[#2B4E3C] text-[10px] sm:text-[11px] text-[#E5DFC5]">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0F2016] border border-[#2B4E3C] text-[11px] text-[#E5DFC5]">
               <span className="text-[#A3997E]">Udyam:</span>
               <span className="font-mono text-[#E5C365] font-semibold">{COMPANY_INFO.registrations.udyam}</span>
               <button

@@ -5,17 +5,17 @@ import { COMPANY_INFO } from "@/data/companyData";
 
 export default function FloatingWhatsApp() {
   return (
-    <aside aria-label="WhatsApp Quick Connect" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40">
+    <aside aria-label="WhatsApp Quick Connect" className="fixed bottom-6 right-6 z-40">
       <a
         href={COMPANY_INFO.whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Arha Interiors on WhatsApp"
         title={`Chat with Arha Interiors on WhatsApp (${COMPANY_INFO.phone})`}
-        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-[0_4px_22px_rgba(37,211,102,0.45)] hover:shadow-[0_6px_28px_rgba(37,211,102,0.65)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
+        className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-[0_4px_22px_rgba(37,211,102,0.45)] hover:shadow-[0_6px_28px_rgba(37,211,102,0.65)] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
       >
         <svg
-          className="w-6 h-6 sm:w-7 sm:h-7 fill-white"
+          className="w-8 h-8 fill-white"
           viewBox="0 0 448 512"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"

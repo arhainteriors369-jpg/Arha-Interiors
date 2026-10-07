@@ -140,10 +140,10 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
                   onChange={(e) => setArea(Number(e.target.value))}
                   className="w-full h-2 bg-[#14291F] rounded-lg appearance-none cursor-pointer accent-[#D4AF37]"
                 />
-                <div className="flex justify-between items-center text-[10px] text-[#A3997E] font-mono mt-2 gap-2">
-                  <span>2k sq.ft<span className="hidden sm:inline"> (Boutique)</span></span>
-                  <span className="hidden xs:inline">1,00,000 sq.ft<span className="hidden md:inline"> (Campus)</span></span>
-                  <span>2,00,000+ sq.ft<span className="hidden sm:inline"> (Floorplate)</span></span>
+                <div className="flex justify-between text-[10px] text-[#A3997E] font-mono mt-2">
+                  <span>2,000 sq.ft (Boutique)</span>
+                  <span>1,00,000 sq.ft (Campus Wing)</span>
+                  <span>2,00,000+ sq.ft (Full Floorplate)</span>
                 </div>
               </div>
 
@@ -184,7 +184,7 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
           </div>
 
           {/* Results Summary Box */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#12261C] to-[#0A1610] p-5 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-[#D4AF37]/40 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#12261C] to-[#0A1610] p-6 sm:p-8 rounded-3xl border-2 border-[#D4AF37]/40 shadow-2xl flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div>
@@ -197,53 +197,53 @@ export default function CostEstimator({ onEstimateSubmit }: CostEstimatorProps) 
 
               {/* Metric Cards */}
               <div className="space-y-3.5 mb-6 sm:mb-8">
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0B1912] border border-[#234232] flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0B1912] border border-[#234232] flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#14291F] border border-[#2B4E3C] flex items-center justify-center text-[#E5C365] shrink-0">
                       <Clock className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E] truncate">Estimated Delivery</div>
-                      <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6] truncate">
+                    <div>
+                      <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E]">Estimated Delivery</div>
+                      <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6]">
                         {estimatedTimeline}
                       </div>
                     </div>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 shrink-0 whitespace-nowrap">
+                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 shrink-0">
                     Fast-Track
                   </span>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0B1912] border border-[#234232] flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0B1912] border border-[#234232] flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#14291F] border border-[#2B4E3C] flex items-center justify-center text-[#E5C365] shrink-0">
                       <Building className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E] truncate">Workplace Footprint</div>
-                      <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6] truncate">
+                    <div>
+                      <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E]">Workplace Footprint</div>
+                      <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6]">
                         {area.toLocaleString("en-IN")} sq. ft.
                       </div>
                     </div>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-[#14291F] text-[#A3997E] border border-[#2B4E3C] shrink-0 whitespace-nowrap">
+                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-[#14291F] text-[#A3997E] border border-[#2B4E3C] shrink-0">
                     Bengaluru Base
                   </span>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0B1912] border border-[#234232] flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-[#0B1912] border border-[#234232] flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#14291F] border border-[#2B4E3C] flex items-center justify-center text-[#E5C365] shrink-0">
                       <ShieldCheck className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E] truncate">Dedicated Force</div>
-                      <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6] truncate">
-                        ~{estimatedDedicatedTeam} Craftsmen
+                    <div>
+                      <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#A3997E]">Dedicated In-House Force</div>
+                      <div className="text-sm sm:text-base font-serif font-bold text-[#FFF2D6]">
+                        ~{estimatedDedicatedTeam} Specialized Craftsmen
                       </div>
                     </div>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800 shrink-0 whitespace-nowrap">
+                  <span className="text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800 shrink-0">
                     HSE Certified
                   </span>
                 </div>

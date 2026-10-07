@@ -27,7 +27,7 @@ export default function QualitySafetySection() {
           {QUALITY_SAFETY_POINTS.map((item) => (
             <div
               key={item.code}
-              className="w-[85vw] max-w-[320px] sm:w-[320px] md:w-auto shrink-0 snap-start glass-panel p-5 sm:p-6 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
+              className="w-[82vw] sm:w-[320px] md:w-auto shrink-0 snap-start glass-panel p-5 sm:p-6 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 group"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-[11px] font-bold tracking-widest px-2.5 py-1 rounded bg-[#14291F] border border-[#2B4E3C] text-[#E5C365]">
@@ -46,7 +46,7 @@ export default function QualitySafetySection() {
         </div>
 
         {/* Why Choose ARHA Interiors? (The 8 Criteria from PDF Page 5) */}
-        <div className="glass-panel p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610]">
+        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610]">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-6 border-b border-[#234232]">
             <div>
               <span className="text-xs uppercase tracking-[0.2em] font-mono text-[#E5C365]">

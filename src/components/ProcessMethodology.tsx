@@ -35,7 +35,7 @@ export default function ProcessMethodology() {
               <button
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
-                className={`w-[76vw] max-w-[280px] sm:w-[45vw] md:w-auto shrink-0 snap-start p-4 rounded-2xl text-left transition-all duration-200 relative cursor-pointer flex flex-col justify-between border ${
+                className={`w-[68vw] sm:w-[45vw] md:w-auto shrink-0 snap-start p-4 rounded-2xl text-left transition-all duration-200 relative cursor-pointer flex flex-col justify-between border ${
                   isCurrent
                     ? "bg-[#142C20] border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.25)] ring-1 ring-[#D4AF37]"
                     : "bg-[#0E1E16] border-[#1E3B2C] hover:border-[#D4AF37]/50 hover:bg-[#12261C]"
@@ -76,7 +76,7 @@ export default function ProcessMethodology() {
         </div>
 
         {/* Active Stage Deep Dive Display Panel */}
-        <div className="glass-panel p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610] shadow-2xl relative overflow-hidden">
+        <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610] shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Stage Description & Milestones */}
             <div className="lg:col-span-7">

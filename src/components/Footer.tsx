@@ -18,8 +18,7 @@ export default function Footer() {
           
           {/* Brand Col - Full Width on Mobile (col-span-2), 2 Cols on Large */}
           <div className="col-span-2 sm:col-span-2 md:col-span-3 lg:col-span-2 space-y-4">
-            <ArhaLogo size="md" className="sm:hidden" showSubtitle={true} />
-            <ArhaLogo size="lg" className="hidden sm:inline-flex" showSubtitle={true} />
+            <ArhaLogo size="lg" showSubtitle={true} />
             <p className="text-xs text-[#A3997E] leading-relaxed max-w-md">
               End-to-end civil contracting, interior architecture, and turnkey MEP fit-outs for enterprise, commercial, and institutional spaces. A single-point experience from concept through handover.
             </p>

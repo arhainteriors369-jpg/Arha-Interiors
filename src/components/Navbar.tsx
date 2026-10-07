@@ -62,7 +62,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             </nav>
 
             {/* Right Action Controls */}
-            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
               {/* Direct Call Link (Desktop) */}
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
@@ -82,10 +82,10 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
 
-              {/* Mobile Adaptive Proposal Button - only appears when width >= 380px to protect hamburger layout */}
+              {/* Mobile Compact Proposal Button - Never Overflows */}
               <button
                 onClick={onOpenConsultation}
-                className="hidden min-[380px]:inline-flex sm:hidden px-2.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] to-[#E5C365] shadow-md cursor-pointer whitespace-nowrap shrink-0"
+                className="sm:hidden px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-[#07110C] bg-gradient-to-r from-[#FFF2D6] to-[#E5C365] shadow-md cursor-pointer whitespace-nowrap shrink-0"
               >
                 Proposal
               </button>
@@ -93,7 +93,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               {/* Mobile / Tablet Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-xl text-[#E5DFC5] hover:text-[#E5C365] bg-[#14291F]/80 border border-[#2B4E3C]/80 hover:border-[#D4AF37]/60 transition-colors shrink-0 flex items-center justify-center min-w-[38px] min-h-[38px]"
+                className="lg:hidden p-1.5 sm:p-2 rounded-lg text-[#E5DFC5] hover:text-[#E5C365] hover:bg-[#14291F] border border-transparent hover:border-[#2B4E3C] transition-colors shrink-0"
                 aria-label="Toggle Navigation"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -104,7 +104,7 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
 
         {/* Mobile Dropdown Menu Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#07110C]/98 border-b border-[#D4AF37]/30 px-5 sm:px-8 py-5 space-y-4 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-top-3 duration-200 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
+          <div className="lg:hidden bg-[#07110C]/98 border-b border-[#D4AF37]/30 px-5 sm:px-8 py-6 space-y-4 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-top-3 duration-200">
             <nav className="grid grid-cols-2 gap-2 pb-4 border-b border-[#1E3B2C]/60">
               {navLinks.map((link) => (
                 <a
