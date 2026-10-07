@@ -6,6 +6,7 @@ import { Sparkles, MoveHorizontal, CheckCircle2, Clock } from "lucide-react";
 export default function BeforeAfterSlider() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [containerWidth, setContainerWidth] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMove = useCallback((clientX: number) => {
@@ -31,6 +32,23 @@ export default function BeforeAfterSlider() {
   const handleMouseDown = () => {
     setIsDragging(true);
   };
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.getBoundingClientRect().width);
+      }
+    };
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(containerRef.current);
+    window.addEventListener("resize", updateWidth);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, []);
 
   useEffect(() => {
     const handleGlobalMouseUp = () => setIsDragging(false);
@@ -89,7 +107,7 @@ export default function BeforeAfterSlider() {
                 alt="Before Civil Shell"
                 className="absolute inset-0 w-full h-full object-cover filter contrast-125 brightness-90"
                 style={{
-                  width: containerRef.current?.getBoundingClientRect().width || "100%",
+                  width: containerWidth ? `${containerWidth}px` : "100%",
                   maxWidth: "none",
                 }}
                 draggable={false}

@@ -91,12 +91,12 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                 <div
                   key={vertical.id}
                   onClick={() => onSelectService(vertical.title)}
-                  className="w-[82vw] sm:w-auto shrink-0 snap-start glass-panel p-6 rounded-2xl border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] hover:shadow-[0_12px_35px_rgba(212,175,55,0.22)] transition-all duration-300 group cursor-pointer bg-gradient-to-b from-[#10241A] to-[#08140E] flex flex-col justify-between"
+                  className="w-[85vw] max-w-[320px] sm:max-w-none sm:w-auto shrink-0 snap-start glass-panel p-5 sm:p-6 rounded-2xl border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] hover:shadow-[0_12px_35px_rgba(212,175,55,0.22)] transition-all duration-300 group cursor-pointer bg-gradient-to-b from-[#10241A] to-[#08140E] flex flex-col justify-between"
                 >
                   <div>
                     {/* Golden Circular Icon Badge Matching Brochure Exactly */}
-                    <div className="w-14 h-14 rounded-full border-2 border-[#D4AF37] ring-4 ring-[#D4AF37]/20 flex items-center justify-center bg-[#07130D] text-[#E5C365] mb-5 group-hover:scale-110 group-hover:border-[#FFF2D6] group-hover:ring-[#D4AF37]/45 transition-all shadow-[0_0_20px_rgba(212,175,55,0.25)]">
-                      <IconComp className="w-7 h-7 text-[#E5C365] stroke-[1.75]" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#D4AF37] ring-4 ring-[#D4AF37]/20 flex items-center justify-center bg-[#07130D] text-[#E5C365] mb-4 sm:mb-5 group-hover:scale-110 group-hover:border-[#FFF2D6] group-hover:ring-[#D4AF37]/45 transition-all shadow-[0_0_20px_rgba(212,175,55,0.25)]">
+                      <IconComp className="w-6 h-6 sm:w-7 sm:h-7 text-[#E5C365] stroke-[1.75]" />
                     </div>
 
                     {/* Exact Brochure Uppercase Title */}
@@ -131,9 +131,9 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
         </div>
 
         {/* Section Divider with Badge */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-2 sm:gap-4 mb-8">
           <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent flex-1" />
-          <span className="px-3.5 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-[11px] font-mono uppercase tracking-[0.2em] text-[#E5C365] font-semibold">
+          <span className="px-3 py-1 rounded-full bg-[#14291F] border border-[#D4AF37]/30 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider sm:tracking-[0.2em] text-[#E5C365] font-semibold text-center">
             Detailed Technical Scope & Deliverables
           </span>
           <div className="h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent flex-1" />
@@ -262,7 +262,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                             onClick={() => setActiveTab(SERVICES_DATA[index + 1].id)}
                             className="inline-flex items-center gap-1 hover:text-[#E5C365] transition-colors py-1 cursor-pointer ml-auto text-right font-medium text-[#E5DFC5]"
                           >
-                            <span>Next: {SERVICES_DATA[index + 1].title.split(" ")[0]} ({SERVICES_DATA[index + 1].number})</span>
+                            <span>Next ({SERVICES_DATA[index + 1].number})</span>
                             <ChevronRight className="w-3.5 h-3.5 text-[#E5C365]" />
                           </button>
                         )}

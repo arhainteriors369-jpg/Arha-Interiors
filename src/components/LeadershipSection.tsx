@@ -50,7 +50,7 @@ export default function LeadershipSection() {
         {/* Leadership & Credentials Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           {/* Proprietor Spotlight Card (PDF Page 3) */}
-          <div className="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl border border-[#D4AF37]/40 bg-gradient-to-br from-[#12261C] to-[#0A1610] relative overflow-hidden shadow-2xl">
+          <div className="lg:col-span-7 glass-panel p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-[#D4AF37]/40 bg-gradient-to-br from-[#12261C] to-[#0A1610] relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
               <span className="font-serif text-9xl font-bold text-[#D4AF37]">SK</span>
             </div>
@@ -69,8 +69,8 @@ export default function LeadershipSection() {
               </div>
 
               {/* 16 Years Experience Badge */}
-              <div className="px-5 py-3 rounded-2xl bg-[#14291F] border border-[#D4AF37] flex items-center gap-3 shrink-0">
-                <div className="font-serif text-3xl font-bold text-[#E5C365]">16</div>
+              <div className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl bg-[#14291F] border border-[#D4AF37] flex items-center gap-2.5 sm:gap-3 shrink-0">
+                <div className="font-serif text-2xl sm:text-3xl font-bold text-[#E5C365]">16</div>
                 <div className="text-[10px] uppercase font-bold tracking-wider text-[#F4EFEA] leading-tight">
                   Years Professional<br />Experience
                 </div>
@@ -93,10 +93,10 @@ export default function LeadershipSection() {
             </div>
 
             {/* Direct Connect Action Row */}
-            <div className="flex flex-wrap items-center gap-3 text-xs">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs">
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#FFF2D6] transition-colors"
+                className="flex items-center gap-2 px-3 py-2 sm:px-3.5 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#FFF2D6] transition-colors"
                 title={`Company Line: ${COMPANY_INFO.phone}`}
               >
                 <Phone className="w-3.5 h-3.5 text-[#E5C365]" />
@@ -107,7 +107,7 @@ export default function LeadershipSection() {
                 href={COMPANY_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-emerald-700/60 hover:border-emerald-400 text-emerald-300 transition-colors"
+                className="flex items-center gap-2 px-3 py-2 sm:px-3.5 rounded-xl bg-emerald-950/80 border border-emerald-700/60 hover:border-emerald-400 text-emerald-300 transition-colors"
                 title="Direct WhatsApp"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
@@ -116,26 +116,26 @@ export default function LeadershipSection() {
 
               <a
                 href={`tel:${COMPANY_INFO.alternatePhoneRaw}`}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#0F2018] border border-[#1E3B2C] hover:border-[#D4AF37] text-[#C5B899] hover:text-[#FFF2D6] transition-colors"
+                className="flex items-center gap-2 px-3 py-2 sm:px-3.5 rounded-xl bg-[#0F2018] border border-[#1E3B2C] hover:border-[#D4AF37] text-[#C5B899] hover:text-[#FFF2D6] transition-colors"
                 title="Personal Direct Line"
               >
                 <Phone className="w-3.5 h-3.5 text-[#A3997E]" />
-                <span className="font-mono">{COMPANY_INFO.alternatePhone} (Personal Direct)</span>
+                <span className="font-mono">{COMPANY_INFO.alternatePhone} <span className="hidden sm:inline">(Personal Direct)</span></span>
               </a>
 
               <a
                 href={`mailto:${COMPANY_INFO.email}`}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#E5DFC5] transition-colors"
+                className="flex items-center gap-2 px-3 py-2 sm:px-3.5 rounded-xl bg-[#14291F] border border-[#2B4E3C] hover:border-[#D4AF37] text-[#E5DFC5] transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-[#E5C365]" />
-                <span>{COMPANY_INFO.email}</span>
+                <span className="truncate max-w-[200px] sm:max-w-none">{COMPANY_INFO.email}</span>
               </a>
             </div>
           </div>
 
           {/* Statutory Business Registrations (PDF Page 14) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610]">
+            <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610]">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs uppercase font-mono tracking-widest text-[#E5C365]">
                   Statutory Credential

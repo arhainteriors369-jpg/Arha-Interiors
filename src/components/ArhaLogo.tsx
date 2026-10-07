@@ -36,17 +36,17 @@ export default function ArhaLogo({
 
       {/* Typography - ONLY Company Name */}
       {variant !== "monogram" && (
-        <div className="flex flex-col justify-center">
-          <div className="flex items-center gap-1.5 whitespace-nowrap">
-            <span className="font-serif tracking-[0.2em] text-[#FBF8F1] font-bold text-base sm:text-lg leading-tight uppercase">
+        <div className="flex flex-col justify-center min-w-0">
+          <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+            <span className="font-serif tracking-[0.14em] sm:tracking-[0.2em] text-[#FBF8F1] font-bold text-sm xs:text-base sm:text-lg leading-tight uppercase">
               ARHA
             </span>
-            <span className="font-serif tracking-[0.2em] text-[#E5C365] font-light text-base sm:text-lg leading-tight uppercase">
+            <span className="font-serif tracking-[0.14em] sm:tracking-[0.2em] text-[#E5C365] font-light text-sm xs:text-base sm:text-lg leading-tight uppercase">
               INTERIORS
             </span>
           </div>
           {showSubtitle && (
-            <span className="text-[10px] tracking-[0.24em] text-[#C5B899] font-serif italic mt-0.5 whitespace-nowrap">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.24em] text-[#C5B899] font-serif italic mt-0.5 whitespace-nowrap truncate max-w-[200px] sm:max-w-none">
               Spaces that grow with you
             </span>
           )}

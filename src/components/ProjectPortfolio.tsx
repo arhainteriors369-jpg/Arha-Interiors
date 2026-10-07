@@ -155,7 +155,7 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
               <div
                 key={project.id}
                 onClick={() => setSelectedProject(project)}
-                className="w-[82vw] sm:w-[380px] lg:w-[410px] xl:w-[430px] shrink-0 snap-start glass-panel rounded-2xl overflow-hidden group cursor-pointer border border-[#2B4E3C]/60 hover:border-[#D4AF37] transition-all duration-500 hover:-translate-y-2 flex flex-col shadow-xl"
+                className="w-[85vw] max-w-[340px] sm:w-[380px] lg:w-[410px] xl:w-[430px] shrink-0 snap-start glass-panel rounded-2xl overflow-hidden group cursor-pointer border border-[#2B4E3C]/60 hover:border-[#D4AF37] transition-all duration-500 hover:-translate-y-2 flex flex-col shadow-xl"
               >
                 {/* Project Image Frame */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#0A1610]">
@@ -294,7 +294,7 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
           <div
-            className="relative max-w-4xl w-full bg-[#0B1912] border border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col animate-in zoom-in-95 duration-200"
+            className="relative max-w-4xl w-full bg-[#0B1912] border border-[#D4AF37]/40 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl max-h-[92vh] sm:max-h-[90vh] flex flex-col animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -318,7 +318,7 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
               </div>
             </div>
 
-            <div className="p-5 sm:p-8 overflow-y-auto flex-1">
+            <div className="p-4 sm:p-8 overflow-y-auto flex-1">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#FBF8F1]">
                   {selectedProject.title}
@@ -344,7 +344,7 @@ export default function ProjectPortfolio({ onRequestSimilar }: ProjectPortfolioP
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-[#E5C365] mb-3">
                   Scope of Turnkey Works Delivered:
                 </h4>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-4 gap-2">
                   {selectedProject.scope.map((item, idx) => (
                     <div
                       key={idx}

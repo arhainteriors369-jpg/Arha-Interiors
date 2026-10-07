@@ -46,22 +46,22 @@ export default function ConsultationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
       <div
-        className="relative max-w-2xl w-full bg-[#0B1912] border border-[#D4AF37]/50 rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200"
+        className="relative max-w-2xl w-full bg-[#0B1912] border border-[#D4AF37]/50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Ribbon */}
-        <div className="bg-gradient-to-r from-[#142C20] via-[#1E3B2C] to-[#142C20] p-6 border-b border-[#D4AF37]/30 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#08120D] border border-[#D4AF37] flex items-center justify-center text-[#E5C365]">
-              <Sparkles className="w-5 h-5" />
+        <div className="bg-gradient-to-r from-[#142C20] via-[#1E3B2C] to-[#142C20] p-4 sm:p-6 border-b border-[#D4AF37]/30 flex items-center justify-between">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#08120D] border border-[#D4AF37] flex items-center justify-center text-[#E5C365] shrink-0">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <h3 className="font-serif text-xl font-bold text-[#FBF8F1]">
+            <div className="min-w-0">
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FBF8F1] truncate">
                 Request Turnkey Proposal
               </h3>
-              <p className="text-xs text-[#E5DFC5]/80">
+              <p className="text-[11px] sm:text-xs text-[#E5DFC5]/80 truncate">
                 Single-point responsibility from concept through handover
               </p>
             </div>
@@ -69,14 +69,14 @@ export default function ConsultationModal({
 
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-[#07110C]/80 border border-[#D4AF37]/30 flex items-center justify-center text-[#E5DFC5] hover:text-white hover:bg-[#14291F] transition-colors cursor-pointer"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#07110C]/80 border border-[#D4AF37]/30 flex items-center justify-center text-[#E5DFC5] hover:text-white hover:bg-[#14291F] transition-colors cursor-pointer shrink-0 ml-2"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
         {/* Content Body */}
-        <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
+        <div className="p-4 sm:p-8 max-h-[85vh] overflow-y-auto">
           {isSubmitted ? (
             <div className="text-center py-10 space-y-4">
               <div className="w-16 h-16 rounded-full bg-[#142C20] border-2 border-[#D4AF37] mx-auto flex items-center justify-center text-[#E5C365]">

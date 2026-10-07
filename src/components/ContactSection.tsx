@@ -52,7 +52,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Direct Contact Details & Bengaluru Coverage */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610] shadow-xl">
+            <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610] shadow-xl">
               <h3 className="font-serif text-2xl font-bold text-[#FBF8F1] mb-6">
                 Corporate Office & Inquiries
               </h3>
@@ -175,7 +175,7 @@ export default function ContactSection() {
 
           {/* Right Column: Interactive Inquiry Form */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-6 sm:p-10 rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610] shadow-2xl">
+            <div className="glass-panel p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#12261C] to-[#0A1610] shadow-2xl">
               <h3 className="font-serif text-2xl font-bold text-[#FBF8F1] mb-2">
                 Send a Message or Project Brief
               </h3>
