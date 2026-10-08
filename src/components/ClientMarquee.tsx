@@ -23,7 +23,7 @@ export default function ClientMarquee() {
   const marqueeList = [...ENTERPRISE_CLIENTS, ...ENTERPRISE_CLIENTS];
 
   return (
-    <section className="relative py-12 bg-[#09150E] border-y border-[#D4AF37]/20 overflow-hidden">
+    <section id="about" className="relative py-12 bg-[#09150E] border-y border-[#D4AF37]/20 overflow-hidden scroll-mt-20">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-24 bg-[#1E3B2C]/30 blur-3xl pointer-events-none" />
 
