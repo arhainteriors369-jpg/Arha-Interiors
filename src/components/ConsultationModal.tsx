@@ -10,6 +10,7 @@ interface ConsultationModalProps {
   onClose: () => void;
   prefillService?: string;
   prefillArea?: number;
+  prefillNotes?: string;
 }
 
 export default function ConsultationModal({
@@ -17,6 +18,7 @@ export default function ConsultationModal({
   onClose,
   prefillService = "Turnkey Fit-Out Execution",
   prefillArea = 15000,
+  prefillNotes = "",
 }: ConsultationModalProps) {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -24,8 +26,21 @@ export default function ConsultationModal({
   const [phone, setPhone] = useState("");
   const [service, setService] = useState(prefillService);
   const [area, setArea] = useState(prefillArea);
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState(prefillNotes);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [waLink, setWaLink] = useState("");
+
+  // Sync state whenever modal opens or props change
+  React.useEffect(() => {
+    if (isOpen) {
+      setService(prefillService);
+      setArea(prefillArea);
+      if (prefillNotes) {
+        setNotes(prefillNotes);
+      }
+      setIsSubmitted(false);
+    }
+  }, [isOpen, prefillService, prefillArea, prefillNotes]);
 
   if (!isOpen) return null;
 
@@ -42,6 +57,28 @@ export default function ConsultationModal({
       });
     } catch {
       // ignore
+    }
+
+    // Construct formatted WhatsApp message
+    const lines = [
+      `*New Turnkey Proposal Request - Arha Interiors*`,
+      ``,
+      `👤 *Name:* ${name}`,
+      `🏢 *Company:* ${company}`,
+      `✉️ *Email:* ${email}`,
+      `📞 *Phone:* ${phone}`,
+      `🛠️ *Service Scope:* ${service}`,
+      `📐 *Floor Area:* ${Number(area).toLocaleString("en-IN")} sq. ft.`,
+      notes ? `📝 *Project Brief:* ${notes}` : null,
+    ].filter(Boolean);
+
+    const messageText = lines.join("\n");
+    const targetUrl = `https://wa.me/917338138361?text=${encodeURIComponent(messageText)}`;
+    setWaLink(targetUrl);
+
+    // Open WhatsApp directly in new window
+    if (typeof window !== "undefined") {
+      window.open(targetUrl, "_blank");
     }
   };
 
@@ -78,35 +115,35 @@ export default function ConsultationModal({
         {/* Content Body */}
         <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
           {isSubmitted ? (
-            <div className="text-center py-10 space-y-4">
+            <div className="text-center py-8 space-y-4">
               <div className="w-16 h-16 rounded-full bg-[#142C20] border-2 border-[#D4AF37] mx-auto flex items-center justify-center text-[#E5C365]">
                 <CheckCircle className="w-8 h-8" />
               </div>
               <h4 className="font-serif text-2xl font-bold text-[#FFF2D6]">
-                Consultation Request Received!
+                Proposal Request Formatted!
               </h4>
               <p className="text-sm text-[#E5DFC5]/90 max-w-md mx-auto leading-relaxed">
-                Thank you for your trust. Our principal director,{" "}
-                <span className="text-[#E5C365] font-semibold">Senthil Karuppasamy. R</span>, and our technical fit-out team will review your project parameters and contact you within 24 business hours.
+                We have prepared your turnkey project details and redirected you to WhatsApp to connect directly with our director,{" "}
+                <span className="text-[#E5C365] font-semibold">Senthil Karuppasamy. R</span>.
               </p>
 
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={waLink || COMPANY_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#25D366] text-[#07110C] hover:bg-[#20ba59] flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
+                >
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>Open WhatsApp Chat</span>
+                </a>
+
                 <a
                   href={`tel:${COMPANY_INFO.phoneRaw}`}
                   className="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#14291F] text-[#FFF2D6] hover:bg-[#1E3B2C] border border-[#D4AF37]/50 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
                 >
                   <Phone className="w-4 h-4 text-[#E5C365]" />
-                  <span>Call: {COMPANY_INFO.phone}</span>
-                </a>
-
-                <a
-                  href={COMPANY_INFO.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 hover:bg-emerald-900 border border-emerald-700/60 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
-                >
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
-                  <span>WhatsApp Chat</span>
+                  <span>Call Directly</span>
                 </a>
 
                 <button

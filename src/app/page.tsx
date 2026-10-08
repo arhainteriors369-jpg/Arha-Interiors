@@ -20,19 +20,23 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("Turnkey Fit-Out Execution");
   const [estimatedArea, setEstimatedArea] = useState(15000);
+  const [estimatedNotes, setEstimatedNotes] = useState("");
 
   const handleOpenConsultation = () => {
     setSelectedService("Turnkey Fit-Out Execution");
+    setEstimatedNotes("");
     setModalOpen(true);
   };
 
   const handleSelectService = (serviceName: string) => {
     setSelectedService(serviceName);
+    setEstimatedNotes("");
     setModalOpen(true);
   };
 
   const handleRequestSimilarProject = (projectName: string) => {
     setSelectedService(`Turnkey Fit-Out (Similar to ${projectName})`);
+    setEstimatedNotes(`Interested in execution similar to project: ${projectName}`);
     setModalOpen(true);
   };
 
@@ -44,6 +48,7 @@ export default function Home() {
   }) => {
     setSelectedService(`Turnkey Fit-Out for ${data.spaceType}`);
     setEstimatedArea(data.area);
+    setEstimatedNotes(`Turnkey Scopes: ${data.selectedScopes.join(", ")}. Target Timeline: ${data.timeline}.`);
     setModalOpen(true);
   };
 
@@ -91,6 +96,7 @@ export default function Home() {
         onClose={() => setModalOpen(false)}
         prefillService={selectedService}
         prefillArea={estimatedArea}
+        prefillNotes={estimatedNotes}
       />
 
       {/* Floating WhatsApp Quick Connect */}

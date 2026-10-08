@@ -7,6 +7,7 @@ import confetti from "canvas-confetti";
 
 export default function ContactSection() {
   const [formSent, setFormSent] = useState(false);
+  const [waLink, setWaLink] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,6 +19,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSent(true);
+
     try {
       confetti({
         particleCount: 60,
@@ -26,6 +28,24 @@ export default function ContactSection() {
         colors: ["#D4AF37", "#E5C365", "#1E3B2C"],
       });
     } catch {}
+
+    const lines = [
+      `*New Project Brief / Inquiry - Arha Interiors*`,
+      ``,
+      `👤 *Name:* ${formData.name}`,
+      `🏢 *Company:* ${formData.company}`,
+      `✉️ *Email:* ${formData.email}`,
+      `📞 *Phone:* ${formData.phone}`,
+      formData.message ? `📝 *Requirements:* ${formData.message}` : null,
+    ].filter(Boolean);
+
+    const messageText = lines.join("\n");
+    const targetUrl = `https://wa.me/917338138361?text=${encodeURIComponent(messageText)}`;
+    setWaLink(targetUrl);
+
+    if (typeof window !== "undefined") {
+      window.open(targetUrl, "_blank");
+    }
   };
 
   return (
@@ -184,16 +204,38 @@ export default function ContactSection() {
               </p>
 
               {formSent ? (
-                <div className="py-12 text-center space-y-3">
+                <div className="py-10 text-center space-y-4">
                   <div className="w-14 h-14 rounded-full bg-[#142C20] border-2 border-[#D4AF37] mx-auto flex items-center justify-center text-[#E5C365]">
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <h4 className="font-serif text-xl font-bold text-[#FFF2D6]">
-                    Thank You for Reaching Out!
+                    Inquiry Formatted for WhatsApp!
                   </h4>
-                  <p className="text-xs text-[#E5DFC5]/80 max-w-sm mx-auto">
-                    We have received your message. Our director Senthil Karuppasamy will connect with you shortly.
+                  <p className="text-xs text-[#E5DFC5]/80 max-w-sm mx-auto leading-relaxed">
+                    Your details have been pre-filled. If WhatsApp didn&apos;t open automatically, click the button below to send your inquiry directly to our team.
                   </p>
+
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href={waLink || COMPANY_INFO.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#25D366] text-[#07110C] hover:bg-[#20ba59] flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-current" />
+                      <span>Open WhatsApp Chat</span>
+                    </a>
+
+                    <button
+                      onClick={() => {
+                        setFormSent(false);
+                        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+                      }}
+                      className="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#14291F] text-[#FFF2D6] hover:bg-[#1E3B2C] border border-[#D4AF37]/40 cursor-pointer"
+                    >
+                      Send Another Inquiry
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
