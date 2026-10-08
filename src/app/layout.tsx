@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     "Senthil Karuppasamy R",
   ],
   authors: [{ name: "Arha Interiors" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/arha_logo_monogram.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/images/arha_logo_monogram.png",
+  },
   openGraph: {
     title: "ARHA INTERIORS | Turnkey Interior & Civil Fit-Out Projects",
     description: "End-to-end design, fit-out and execution for corporate, commercial and institutional spaces.",

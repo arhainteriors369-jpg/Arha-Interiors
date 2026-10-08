@@ -18,7 +18,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
             loop
             muted
             playsInline
-            poster="/images/projects/project_img_1.jpg"
+            poster="/images/hero-poster.jpg"
             className="w-full h-full object-cover object-center filter brightness-100 contrast-105"
           >
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
