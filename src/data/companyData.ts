@@ -50,7 +50,7 @@ export const COMPANY_INFO = {
   whatsappUrl: "https://wa.me/917338138361?text=Hello%20Arha%20Interiors%2C%20I%20would%20like%20to%20inquire%20about%20turnkey%20fit-out%20services.",
   alternatePhone: "+91 84318 93658",
   alternatePhoneRaw: "+918431893658",
-  email: "arhainteriors369@gmail.com",
+  email: "info@arhainteriors.co.in",
   location: "Hongasandra, Bengaluru, Karnataka",
   address: {
     line1: "No - 4, 8th Cross, 7th Main Road",

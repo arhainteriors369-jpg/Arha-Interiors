@@ -100,7 +100,7 @@ const localBusinessStructuredData = {
   description:
     "Premier turnkey civil and interior fit-out contracting firm in Bengaluru specializing in commercial offices, corporate workspaces, and institutional interiors.",
   telephone: "+917338138361",
-  email: "arhainteriors369@gmail.com",
+  email: "info@arhainteriors.co.in",
   address: {
     "@type": "PostalAddress",
     streetAddress: "No - 4, 8th Cross, 7th Main Road, Balaji Layout, Hongasandra",

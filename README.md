@@ -193,7 +193,7 @@ The design reflects institutional reliability and bespoke luxury tailored for co
 **ARHA INTERIORS**  
 - **Director**: Senthil Karuppasamy. R
 - **Phone**: [+91 84318 93658](tel:+918431893658)
-- **Email**: [arhainteriors369@gmail.com](mailto:arhainteriors369@gmail.com)
+- **Email**: [info@arhainteriors.co.in](mailto:info@arhainteriors.co.in)
 - **Location**: Bengaluru, Karnataka, India
 - **GSTIN**: `29ESKPS8538H1ZT`
 - **MSME Udyam**: `UDYAM-KR-03-0745530`
